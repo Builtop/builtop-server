@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY users /app/users
+COPY common /app/common
+
+WORKDIR /app/common
+RUN npm install
+
+WORKDIR /app/users
+RUN npm install
+
+CMD [ "ts-node", "src/index.ts" ]
