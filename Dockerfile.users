@@ -11,4 +11,4 @@ RUN npm install
 WORKDIR /app/users
 RUN npm install
 
-CMD [ "ts-node", "src/index.ts" ]
+CMD [ "npm", "start" ]
