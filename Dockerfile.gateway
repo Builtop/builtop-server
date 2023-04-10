@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY gateway /app/gateway
+COPY common /app/common
+
+WORKDIR /app/common
+RUN npm install
+
+WORKDIR /app/gateway
+RUN npm install
+
+CMD [ "npm", "start" ]

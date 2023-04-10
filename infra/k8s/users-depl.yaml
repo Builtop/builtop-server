@@ -19,9 +19,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: users-balancer
-spec: 
-  type: LoadBalancer
+  name: users-srv
+spec:
   selector:
     app: users
   ports:

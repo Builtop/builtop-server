@@ -1,0 +1,10 @@
+{
+    "services": {
+        "users": {
+            "name": "users",
+            "host": "users-srv",
+            "port": 3001,
+            "url": "http://users-srv:3001"
+        }
+    }
+}
