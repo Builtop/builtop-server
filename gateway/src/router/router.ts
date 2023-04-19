@@ -1,7 +1,8 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction, application } from 'express';
 import axios from 'axios';
 
 import { BadRequestError } from '../../../common/index';
+import { formatedHeaders } from '../util/formated-headers.util';
 
 const registry = require('./registry.json');
 
@@ -34,8 +35,14 @@ router.all('/api/:serviceName/*', async (req: Request, res: Response, next: Next
             const response = await axios.post(
                 `${registry.services[req.params.serviceName].url}${req.originalUrl}`,
                 req.body,
-                { headers: req.headers }
+                { 
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": req.header('authorization')
+                    } 
+                }
             );
+            console.log(response.data);
             return res.status(response.status).json(response.data);
         }
 
@@ -43,7 +50,12 @@ router.all('/api/:serviceName/*', async (req: Request, res: Response, next: Next
             const response = await axios.put(
                 `${registry.services[req.params.serviceName].url}${req.originalUrl}`,
                 req.body,
-                { headers: req.headers }
+                {
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": req.header('authorization')
+                    }
+                }
             );
             return res.status(response.status).json(response.data);
         }
@@ -51,7 +63,12 @@ router.all('/api/:serviceName/*', async (req: Request, res: Response, next: Next
         if (req.method === 'GET') {
             const response = await axios.get(
                 `${registry.services[req.params.serviceName].url}${req.originalUrl}`,
-                { headers: req.headers }
+                { 
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": req.header('authorization')
+                    }
+                }
             );
             return res.status(response.status).json(response.data);
         }
@@ -59,7 +76,12 @@ router.all('/api/:serviceName/*', async (req: Request, res: Response, next: Next
         if (req.method === 'DELETE') {
             const response = await axios.delete(
                 `${registry.services[req.params.serviceName].url}${req.originalUrl}`,
-                { headers: req.headers }
+                {
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "Authorization": req.header('authorization')
+                    }
+                }
             );
             return res.status(response.status).json(response.data);
         }
