@@ -12,7 +12,7 @@ export class NotFoundError extends CustomError {
         Object.setPrototypeOf(this, NotFoundError.prototype);
     }
 
-    getResponse(): ProcessResult<undefined> {
+    getResponse(): ProcessResult<any> {
         return {
             success: false,
             errorMessage: this.message

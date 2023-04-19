@@ -5,15 +5,15 @@ import { IUser, User } from '../../../common/index';
 
 export class UserService {
     static async findAll<T>(query: FilterQuery<IUser<ObjectId>>, skip: number = 0, limit: number = 15) {
-        return await Model.User.find<IUser<T | undefined>>(query).populate('info').skip(skip).limit(limit);
+        return await Model.User.find<IUser<T | any>>(query).populate('info').skip(skip).limit(limit);
     }
 
     static async findByEmail<T>(email: string) {
-        return await Model.User.findOne<IUser<T | undefined>>({ email }).populate('info');
+        return await Model.User.findOne<IUser<T | any>>({ email }).populate('info');
     }
 
     static async findById<T>(_id: string | ObjectId) {
-        return await Model.User.findById<IUser<T | undefined>>(_id).populate('info');
+        return await Model.User.findById<IUser<T | any>>(_id).populate('info');
     }
 
     static async create(doc: User<ObjectId>) {
@@ -26,6 +26,6 @@ export class UserService {
     }
 
     static async deleteById<T>(_id: string | ObjectId) {
-        return await Model.User.findByIdAndRemove<IUser<T | undefined>>(_id).populate('info');
+        return await Model.User.findByIdAndRemove<IUser<T | any>>(_id).populate('info');
     }
 }

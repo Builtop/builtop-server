@@ -21,7 +21,7 @@ app.use(router);
 app.all('*', routeCatcher);
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
-    let errorResponse: ProcessResult<undefined> = {
+    let errorResponse: ProcessResult<any> = {
         success: false,
         innerError: error.message
     };

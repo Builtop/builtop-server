@@ -7,7 +7,7 @@ export const errorHandler = (error: Error, req: Request, res: Response, next: Ne
         return res.status(error.statusCode).json(error.getResponse());
     }
 
-    res.status(500).json(<ProcessResult<undefined>> {
+    res.status(500).json(<ProcessResult<any>> {
         success: false,
         innerError: error.message
     });

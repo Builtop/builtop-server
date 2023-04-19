@@ -9,5 +9,5 @@ export abstract class CustomError extends Error {
         Object.setPrototypeOf(this, CustomError.prototype);
     }
 
-    abstract getResponse(): ProcessResult<undefined>;
+    abstract getResponse(): ProcessResult<any>;
 }

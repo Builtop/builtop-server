@@ -12,7 +12,7 @@ export class ValidationError extends CustomError {
         Object.setPrototypeOf(this, ValidationError.prototype);
     }
 
-    getResponse(): ProcessResult<undefined> {
+    getResponse(): ProcessResult<any> {
         return {
             success: false,
             errorMessage: this.message

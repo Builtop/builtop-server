@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import { UserService } from '../services/user.service';
 
-import { User, AdminInfo, SupervisorInfo, BuyerInfo, SupplierInfo, NotFoundError, BadRequestError, ProcessResult, infoType } from '../../../common/index';
+import { User, AdminInfo, SupervisorInfo, BuyerInfo, SupplierInfo, NotFoundError, BadRequestError, ProcessResult, infoType, Validation } from '../../../common/index';
 
 export const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -91,6 +91,8 @@ export const getAllSuppliers = async (req: Request, res: Response, next: NextFun
 
 export const getUserById = async (req: Request, res: Response, next: NextFunction) => {
     try {
+        Validation.isObjectId(req.params.id);
+
         const user = await UserService.findById<any>(req.params.id);
         if (!user) {
             throw new NotFoundError('no user found with this ID');

@@ -27,7 +27,7 @@ export const signup = async (req: Request<{}, {}, signupInput>, res: Response, n
             privileges: newUser.privileges
         });
 
-        res.status(201).json(<ProcessResult<User<undefined>>>{
+        res.status(201).json(<ProcessResult<User<any>>>{
             success: true,
             data: newUser,
             token: token

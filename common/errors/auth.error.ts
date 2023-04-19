@@ -12,7 +12,7 @@ export class AuthError extends CustomError {
         Object.setPrototypeOf(this, AuthError.prototype);
     }
 
-    getResponse(): ProcessResult<undefined> {
+    getResponse(): ProcessResult<any> {
         return {
             success: false,
             errorMessage: this.message

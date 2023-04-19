@@ -12,7 +12,7 @@ export class BadRequestError extends CustomError {
         Object.setPrototypeOf(this, BadRequestError.prototype);
     }
 
-    getResponse(): ProcessResult<undefined> {
+    getResponse(): ProcessResult<any> {
         return {
             success: false,
             errorMessage: this.message

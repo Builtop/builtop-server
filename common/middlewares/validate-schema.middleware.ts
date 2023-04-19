@@ -4,7 +4,8 @@ import { AnySchema } from 'yup';
 export const validateSchema = (schema: AnySchema) => {
     return async (req: Request, res: Response, next: NextFunction) => {
         try {
-            await schema.validate(req.body);
+            const result = await schema.validate(req.body);
+            req.body = result;
             next();
         } catch (err) {
             next(err);

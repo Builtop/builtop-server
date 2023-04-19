@@ -26,6 +26,7 @@ export * from './middlewares/validate-schema.middleware';
 
 // services
 export * from './services/password-manager.service';
+export * from './services/validation.service';
 
 // types
 export * from './types/token-data.type';
