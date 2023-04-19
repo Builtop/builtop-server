@@ -53,7 +53,7 @@ export const login = async (req: Request<{}, {}, loginInput>, res: Response, nex
             privileges: user.privileges
         });
 
-        res.status(201).json(<ProcessResult<User<any>>>{
+        res.status(200).json(<ProcessResult<User<any>>>{
             success: true,
             data: user,
             token: token
