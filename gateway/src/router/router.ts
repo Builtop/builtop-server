@@ -2,7 +2,6 @@ import express, { Request, Response, NextFunction, application } from 'express';
 import axios from 'axios';
 
 import { BadRequestError } from '../../../common/index';
-import { formatedHeaders } from '../util/formated-headers.util';
 
 const registry = require('./registry.json');
 
