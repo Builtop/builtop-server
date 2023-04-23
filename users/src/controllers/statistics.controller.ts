@@ -2,11 +2,11 @@ import { Request, Response, NextFunction } from 'express';
 
 import { UserService } from '../services/user.service';
 
-import { infoType, ProcessResult } from '../../../common/index';
+import { infoType, ProcessResult, IUser } from '../../../common/index';
 
 export const getUsersStatistics = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const users = await UserService.findAll<any>({});
+        const users = await UserService.findAll<IUser<any>>({});
 
         const data = {
             usersNum: users.length,

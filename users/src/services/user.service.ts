@@ -1,31 +1,21 @@
-import { ObjectId, FilterQuery, UpdateQuery, QueryOptions } from 'mongoose';
+import { ObjectId, FilterQuery } from 'mongoose';
 
-import * as Model from '../models/user.model';
-import { IUser, User } from '../../../common/index';
+import { DBService } from '../../../common/index';
 
-export class UserService {
-    static async findAll<T>(query: FilterQuery<IUser<ObjectId>>, skip: number = 0, limit: number = 15) {
-        return await Model.User.find<IUser<T | any>>(query).populate('info').skip(skip).limit(limit);
-    }
+import { User } from '../models/user.model';
 
-    static async findByEmail<T>(email: string) {
-        return await Model.User.findOne<IUser<T | any>>({ email }).populate('info');
+export class UserService extends DBService {
+    static Model = User;
+
+    static async findAll<T>(query: FilterQuery<T>, skip: number | undefined = 0, limit: number | undefined = 15) {
+        return await this.Model.find<T>(query).populate('info').skip(skip).limit(limit);
     }
 
     static async findById<T>(_id: string | ObjectId) {
-        return await Model.User.findById<IUser<T | any>>(_id).populate('info');
+        return await this.Model.findById<T>(_id).populate('info');
     }
 
-    static async create(doc: User<ObjectId>) {
-        const newUser = new Model.User(doc);
-        return await newUser.save();
-    }
-
-    static async update(query: FilterQuery<IUser<ObjectId>>, update: UpdateQuery<IUser<ObjectId>>, options: QueryOptions) {
-        return await Model.User.findOneAndUpdate(query, update, options);;
-    }
-
-    static async deleteById<T>(_id: string | ObjectId) {
-        return await Model.User.findByIdAndRemove<IUser<T | any>>(_id).populate('info');
+    static async findByEmail<T>(email: string) {
+        return await User.findOne<T>({ email }).populate('info');
     }
 }

@@ -4,16 +4,16 @@ import { signupInput, loginInput } from '../schemas/auth.schema';
 
 import { UserService } from '../services/user.service';
 
-import { ProcessResult, User, userStatus, PasswordManager, ValidationError, AuthError, JWT, roles } from '../../../common/index';
+import { ProcessResult, IUser, User, userStatus, PasswordManager, ValidationError, AuthError, JWT } from '../../../common/index';
 
 export const signup = async (req: Request<{}, {}, signupInput>, res: Response, next: NextFunction) => {
     try {
-        const existingUser = await UserService.findByEmail<any>(req.body.email);
+        const existingUser = await UserService.findByEmail<IUser<any>>(req.body.email);
         if (existingUser) {
             throw new ValidationError('the email address you have entered belongs to an existing user');
         }
 
-        const newUser = await UserService.create({
+        const newUser = await UserService.create<User<any>>({
             email: req.body.email,
             password: req.body.password,
             privileges: [],
@@ -27,7 +27,7 @@ export const signup = async (req: Request<{}, {}, signupInput>, res: Response, n
             privileges: newUser.privileges
         });
 
-        res.status(201).json(<ProcessResult<User<any>>>{
+        res.status(201).json(<ProcessResult<IUser<any>>>{
             success: true,
             data: newUser,
             token: token
@@ -39,7 +39,7 @@ export const signup = async (req: Request<{}, {}, signupInput>, res: Response, n
 
 export const login = async (req: Request<{}, {}, loginInput>, res: Response, next: NextFunction) => {
     try {
-        const user = await UserService.findByEmail<any>(req.body.email);
+        const user = await UserService.findByEmail<IUser<any>>(req.body.email);
         if (!user) {
             throw new AuthError('invalid credentials');
         }
@@ -53,7 +53,7 @@ export const login = async (req: Request<{}, {}, loginInput>, res: Response, nex
             privileges: user.privileges
         });
 
-        res.status(200).json(<ProcessResult<User<any>>>{
+        res.status(200).json(<ProcessResult<IUser<any>>>{
             success: true,
             data: user,
             token: token

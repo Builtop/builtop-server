@@ -25,6 +25,7 @@ export * from './middlewares/route-catcher.middleware';
 export * from './middlewares/validate-schema.middleware';
 
 // services
+export * from './services/db-service.service';
 export * from './services/password-manager.service';
 export * from './services/validation.service';
 
