@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import { UserService } from '../services/user.service';
 
-import { IUser, AdminInfo, SupervisorInfo, BuyerInfo, SupplierInfo, NotFoundError, BadRequestError, ProcessResult, infoType, Validation } from '../../../common/index';
+import { IUser, AdminInfo, SupervisorInfo, BuyerInfo, SupplierInfo, NotFoundError, BadRequestError, ProcessResult, infoType, userStatus, Validation } from '../../../common/index';
 
 export const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -15,6 +15,57 @@ export const getAllUsers = async (req: Request, res: Response, next: NextFunctio
         res.status(200).json(<ProcessResult<IUser<any>[]>>{
             success: true,
             data: users
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+export const getAllActiveUsers = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        if (!req.query.skip || !req.query.limit) {
+            throw new BadRequestError('skip query value or limit query value is not defined');
+        }
+
+        const activeUsers = await UserService.findAll<IUser<any>>({ status: userStatus.Active }, +req.query.skip, +req.query.limit);
+
+        res.status(200).json(<ProcessResult<IUser<any>[]>>{
+            success: true,
+            data: activeUsers
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+export const getAllPendingUsers = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        if (!req.query.skip || !req.query.limit) {
+            throw new BadRequestError('skip query value or limit query value is not defined');
+        }
+
+        const pendingUsers = await UserService.findAll<IUser<any>>({ status: userStatus.Pending }, +req.query.skip, +req.query.limit);
+
+        res.status(200).json(<ProcessResult<IUser<any>[]>>{
+            success: true,
+            data: pendingUsers
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+export const getAllInActiveUsers = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        if (!req.query.skip || !req.query.limit) {
+            throw new BadRequestError('skip query value or limit query value is not defined');
+        }
+
+        const inActiveUsers = await UserService.findAll<IUser<any>>({ status: userStatus.InActive }, +req.query.skip, +req.query.limit);
+
+        res.status(200).json(<ProcessResult<IUser<any>[]>>{
+            success: true,
+            data: inActiveUsers
         });
     } catch (err) {
         next(err);

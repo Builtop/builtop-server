@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import { UserService } from '../services/user.service';
 
-import { infoType, ProcessResult, IUser } from '../../../common/index';
+import { infoType, userStatus, ProcessResult, IUser } from '../../../common/index';
 
 export const getUsersStatistics = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -10,6 +10,9 @@ export const getUsersStatistics = async (req: Request, res: Response, next: Next
 
         const data = {
             usersNum: users.length,
+            activeUsersnNum: users.filter(user => user.status === userStatus.Active).length,
+            pendingUsersnNum: users.filter(user => user.status === userStatus.Pending).length,
+            inActiveUsersnNum: users.filter(user => user.status === userStatus.InActive).length,
             adminsNum: users.filter(user => user.infoType === infoType.AdminInfo).length,
             supervisorsNum: users.filter(user => user.infoType === infoType.SupervisorInfo).length,
             buyersNum: users.filter(user => user.infoType === infoType.BuyerInfo).length,

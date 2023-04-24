@@ -5,11 +5,13 @@ import { validateSchema } from '../../common/index';
 
 // controllers
 import * as authController from './controllers/auth.controller';
+import * as adminController from './controllers/admin.controller';
 import * as userController from './controllers/user.controller';
 import * as statisticsContoller from './controllers/statistics.controller';
 
 // schema
 import { signupSchema, loginSchema } from './schemas/auth.schema';
+import { addSupervisorSchema, approveAccountSchema, activateAccountSchema, deactivateAccountSchema } from './schemas/admin.schema';
 
 const router = express.Router();
 
@@ -17,8 +19,18 @@ const router = express.Router();
 router.post('/signup', json(), validateSchema(signupSchema), authController.signup);
 router.post('/login', json(), validateSchema(loginSchema), authController.login);
 
+// admin
+router.post('/add-supervisor', json(), validateSchema(addSupervisorSchema), adminController.addSupervisor);
+router.put('/approve-account', json(), validateSchema(approveAccountSchema), adminController.approveAccount);
+router.put('/activate-account', json(), validateSchema(activateAccountSchema), adminController.activateAccount);
+router.put('/deactivate-account', json(), validateSchema(deactivateAccountSchema), adminController.deactivateAccount);
+router.delete('/user/:id', adminController.deleteUser);
+
 // user
 router.get('/users', userController.getAllUsers);
+router.get('/active-users', userController.getAllActiveUsers);
+router.get('/pending-users', userController.getAllPendingUsers);
+router.get('/inactive-users', userController.getAllInActiveUsers);
 router.get('/admins', userController.getAllAdmins);
 router.get('/supervisors', userController.getAllSupervisors);
 router.get('/buyers', userController.getAllBuyers);
