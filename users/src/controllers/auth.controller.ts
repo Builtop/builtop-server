@@ -44,6 +44,8 @@ export const login = async (req: Request<{}, {}, loginInput>, res: Response, nex
             throw new AuthError('invalid credentials');
         }
 
+        await PasswordManager.compare(req.body.password, user.password, 'Auth');
+
         if (user.status === userStatus.InActive) {
             throw new AuthError('this account is suspended');
         }
@@ -51,8 +53,6 @@ export const login = async (req: Request<{}, {}, loginInput>, res: Response, nex
         if (user.status === userStatus.Pending) {
             throw new AuthError('this account is waiting for approval');
         }
-
-        await PasswordManager.compare(req.body.password, user.password);
 
         const token = JWT.sign({
             _id: user._id.toString(),

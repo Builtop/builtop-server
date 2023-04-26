@@ -7,11 +7,13 @@ import { validateSchema } from '../../common/index';
 import * as authController from './controllers/auth.controller';
 import * as adminController from './controllers/admin.controller';
 import * as userController from './controllers/user.controller';
+import * as profileController from './controllers/profile.controller';
 import * as statisticsContoller from './controllers/statistics.controller';
 
 // schema
 import { signupSchema, loginSchema } from './schemas/auth.schema';
 import { addSupervisorSchema, approveAccountSchema, activateAccountSchema, deactivateAccountSchema } from './schemas/admin.schema';
+import { changePasswordSchema } from './schemas/profile.schema';
 
 const router = express.Router();
 
@@ -36,6 +38,9 @@ router.get('/supervisors', userController.getAllSupervisors);
 router.get('/buyers', userController.getAllBuyers);
 router.get('/suppliers', userController.getAllSuppliers);
 router.get('/user/:id', userController.getUserById);
+
+// profile
+router.put('/change-password', json(), validateSchema(changePasswordSchema), profileController.changePassword);
 
 // statistics
 router.get('/statistics', statisticsContoller.getUsersStatistics);
