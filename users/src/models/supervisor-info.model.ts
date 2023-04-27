@@ -11,6 +11,10 @@ const supervisorInfoSchema = new Schema<ISupervisorInfo>({
         type: String,
         required: true
     },
+    phoneNum: {
+        type: String,
+        required: true
+    },
     image: {
         type: String
     }
@@ -18,6 +22,9 @@ const supervisorInfoSchema = new Schema<ISupervisorInfo>({
 {
     toJSON: {
         transform(doc, ret) {
+            delete ret._id;
+            delete ret.createdAt;
+            delete ret.updatedAt;
             delete ret.__v;
         }
     },

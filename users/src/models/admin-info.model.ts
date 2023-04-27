@@ -11,6 +11,10 @@ const adminInfoSchema = new Schema<IAdminInfo>({
         type: String,
         required: true
     },
+    phoneNum: {
+        type: String,
+        required: true
+    },
     image: {
         type: String
     }
@@ -18,6 +22,9 @@ const adminInfoSchema = new Schema<IAdminInfo>({
 {
     toJSON: {
         transform(doc, ret) {
+            delete ret._id;
+            delete ret.createdAt;
+            delete ret.updatedAt;
             delete ret.__v;
         }
     },

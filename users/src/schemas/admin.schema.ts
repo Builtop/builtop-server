@@ -1,13 +1,13 @@
 import * as yup from 'yup';
 import { Types } from 'mongoose';
 
-export const addSupervisorSchema = yup.object({
+export const addSupervisorSchema = yup.object().shape({
     email: yup.string().email().matches(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'email must be valid email').required().ensure()
 });
 
 export type addSupervisorInput = yup.InferType<typeof addSupervisorSchema>;
 
-export const approveAccountSchema = yup.object({
+export const approveAccountSchema = yup.object().shape({
     _id: yup.mixed().test('valid objectId', 'invalid objectId', (value: unknown) => 
         typeof value === 'string' && Types.ObjectId.isValid(value)
     ).required()
@@ -15,7 +15,7 @@ export const approveAccountSchema = yup.object({
 
 export type approveAccountInput = yup.InferType<typeof approveAccountSchema>;
 
-export const activateAccountSchema = yup.object({
+export const activateAccountSchema = yup.object().shape({
     _id: yup.mixed().test('valid objectId', 'invalid objectId', (value: unknown) => 
         typeof value === 'string' && Types.ObjectId.isValid(value)
     ).required()
@@ -23,7 +23,7 @@ export const activateAccountSchema = yup.object({
 
 export type activateAccountInput = yup.InferType<typeof activateAccountSchema>;
 
-export const deactivateAccountSchema = yup.object({
+export const deactivateAccountSchema = yup.object().shape({
     _id: yup.mixed().test('valid objectId', 'invalid objectId', (value: unknown) => 
         typeof value === 'string' && Types.ObjectId.isValid(value)
     ).required()

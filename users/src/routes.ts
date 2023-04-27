@@ -13,7 +13,7 @@ import * as statisticsContoller from './controllers/statistics.controller';
 // schema
 import { signupSchema, loginSchema } from './schemas/auth.schema';
 import { addSupervisorSchema, approveAccountSchema, activateAccountSchema, deactivateAccountSchema } from './schemas/admin.schema';
-import { changePasswordSchema } from './schemas/profile.schema';
+import { setupSupervisorSchema, editAdminSchema, editSupervisorSchema, changePasswordSchema } from './schemas/profile.schema';
 
 const router = express.Router();
 
@@ -40,6 +40,9 @@ router.get('/suppliers', userController.getAllSuppliers);
 router.get('/user/:id', userController.getUserById);
 
 // profile
+router.post('/setup-supervisor', json(), validateSchema(setupSupervisorSchema), profileController.setupSupervisorAccount);
+router.put('/edit-admin', json(), validateSchema(editAdminSchema), profileController.editAdminProfile);
+router.put('/edit-supervisor', json(), validateSchema(editSupervisorSchema), profileController.editSupervisorProfile);
 router.put('/change-password', json(), validateSchema(changePasswordSchema), profileController.changePassword);
 
 // statistics

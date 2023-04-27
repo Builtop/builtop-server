@@ -44,6 +44,9 @@ const supplierInfoSchema = new Schema<ISupplierInfo>({
 {
     toJSON: {
         transform(doc, ret) {
+            delete ret._id;
+            delete ret.createdAt;
+            delete ret.updatedAt;
             delete ret.__v;
         }
     },
