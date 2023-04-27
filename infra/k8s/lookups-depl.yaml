@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lookups-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lookups
+  template:
+    metadata:
+      labels:
+        app: lookups
+    spec:
+      containers:
+        - name: lookups
+          image: elgharabawi/lookups
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lookups-srv
+spec:
+  selector:
+    app: lookups
+  ports:
+    - name: lookups
+      protocol: TCP
+      port: 3002
+      targetPort: 3002

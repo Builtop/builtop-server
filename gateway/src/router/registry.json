@@ -5,6 +5,12 @@
             "host": "users-srv",
             "port": 3001,
             "url": "http://users-srv:3001"
+        },
+        "lookups": {
+            "name": "lookups",
+            "host": "lookups-srv",
+            "port": 3002,
+            "url": "http://lookups-srv:3002"
         }
     }
 }
