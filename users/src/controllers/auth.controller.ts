@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-import { signupInput, loginInput } from '../schemas/auth.schema';
+import { signupInput, loginInput, validateOTPInput, forgetPasswordInput, resetPasswordInput } from '../schemas/auth.schema';
 
 import { UserService } from '../services/user.service';
 
@@ -61,6 +61,62 @@ export const login = async (req: Request<{}, {}, loginInput>, res: Response, nex
             success: true,
             data: user,
             token: token
+        });
+    } catch (err) {
+        next(err);
+    }
+}
+
+export const validateOTP = async (req: Request<{}, {}, validateOTPInput>, res: Response, next: NextFunction) => {
+    try {
+        const user = await UserService.findByPhoneNum<IUser<any>>(req.body.phoneNum);
+        if (!user) {
+            throw new AuthError('invalid credentials');
+        }
+
+        if (req.body.OTP !== '100100') {
+            throw new AuthError('invalid credentials');
+        }
+
+        res.status(200).json(<ProcessResult<any>> {
+            success: true
+        });
+    } catch (err) {
+        next(err);
+    }
+}
+
+export const forgetPassword = async (req: Request<{}, {}, forgetPasswordInput>, res: Response, next: NextFunction) => {
+    try {
+        const user = await UserService.findByPhoneNum<IUser<any>>(req.body.phoneNum);
+        if (!user) {
+            throw new AuthError('invalid credentials');
+        }
+
+        res.status(200).json(<ProcessResult<any>> {
+            success: true
+        });
+    } catch (err) {
+        next(err);
+    }
+}
+
+export const resetPassword = async (req: Request<{}, {}, resetPasswordInput>, res: Response, next: NextFunction) => {
+    try {
+        const user = await UserService.findByPhoneNum<IUser<any>>(req.body.phoneNum);
+        if (!user) {
+            throw new AuthError('invalid credentials');
+        }
+
+        if (req.body.OTP !== '100100') {
+            throw new AuthError('invalid credentials');
+        }
+
+        user.password = req.body.newPassword;
+        await user.save();
+
+        res.status(200).json(<ProcessResult<any>> {
+            success: true
         });
     } catch (err) {
         next(err);

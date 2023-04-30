@@ -11,7 +11,7 @@ import * as profileController from './controllers/profile.controller';
 import * as statisticsContoller from './controllers/statistics.controller';
 
 // schema
-import { signupSchema, loginSchema } from './schemas/auth.schema';
+import { signupSchema, loginSchema, validateOTPSchema, forgetPasswordSchema, resetPasswordSchema } from './schemas/auth.schema';
 import { addSupervisorSchema, approveAccountSchema, activateAccountSchema, deactivateAccountSchema } from './schemas/admin.schema';
 import { editAdminSchema, editSupervisorSchema, changePasswordSchema } from './schemas/profile.schema';
 
@@ -20,6 +20,9 @@ const router = express.Router();
 // auth
 router.post('/signup', json(), validateSchema(signupSchema), authController.signup);
 router.post('/login', json(), validateSchema(loginSchema), authController.login);
+router.post('/validate-otp', json(), validateSchema(validateOTPSchema), authController.validateOTP);
+router.post('/forget-password', json(), validateSchema(forgetPasswordSchema), authController.forgetPassword);
+router.post('/reset-password', json(), validateSchema(forgetPasswordSchema), authController.resetPassword);
 
 // admin
 router.post('/add-supervisor', json(), validateSchema(addSupervisorSchema), adminController.addSupervisor);
