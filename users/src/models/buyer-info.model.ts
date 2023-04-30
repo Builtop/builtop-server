@@ -8,7 +8,8 @@ const buyerInfoSchema = new Schema<IBuyerInfo>({
         default: roles.Buyer
     },
     image: {
-        type: String
+        type: String,
+        required: true
     },
     business: {
         type: String,

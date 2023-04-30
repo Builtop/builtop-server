@@ -16,7 +16,7 @@ export class DBService {
         return await this.Model.findById(_id);
     }
 
-    static async deleteById(_id: string | ObjectId) {
-        return await this.Model.findByIdAndRemove(_id);
+    static async deleteById<T>(_id: string | ObjectId, session?: ClientSession) {
+        return await this.Model.findByIdAndRemove<T>(_id, { session });
     }
 }

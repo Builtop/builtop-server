@@ -8,13 +8,13 @@ import { ProcessResult, IUser, User, userStatus, PasswordManager, ValidationErro
 
 export const signup = async (req: Request<{}, {}, signupInput>, res: Response, next: NextFunction) => {
     try {
-        const existingUser = await UserService.findByEmail<IUser<any>>(req.body.email);
+        const existingUser = await UserService.findByPhoneNum<IUser<any>>(req.body.phoneNum);
         if (existingUser) {
-            throw new ValidationError('the email address you have entered belongs to an existing user');
+            throw new ValidationError('the phone number you have entered belongs to an existing user');
         }
 
         const newUser = await UserService.create<User<any>>({
-            email: req.body.email,
+            phoneNum: req.body.phoneNum,
             password: req.body.password,
             privileges: [],
             status: userStatus.Pending
@@ -22,7 +22,7 @@ export const signup = async (req: Request<{}, {}, signupInput>, res: Response, n
 
         const token = JWT.sign({
             _id: newUser._id.toString(),
-            email: newUser.email,
+            phoneNum: newUser.phoneNum,
             role: 'no-role',
             privileges: newUser.privileges
         });
@@ -39,7 +39,7 @@ export const signup = async (req: Request<{}, {}, signupInput>, res: Response, n
 
 export const login = async (req: Request<{}, {}, loginInput>, res: Response, next: NextFunction) => {
     try {
-        const user = await UserService.findByEmail<IUser<any>>(req.body.email);
+        const user = await UserService.findByPhoneNum<IUser<any>>(req.body.phoneNum);
         if (!user) {
             throw new AuthError('invalid credentials');
         }
@@ -50,13 +50,9 @@ export const login = async (req: Request<{}, {}, loginInput>, res: Response, nex
             throw new AuthError('this account is suspended');
         }
 
-        if (user.status === userStatus.Pending) {
-            throw new AuthError('this account is waiting for approval');
-        }
-
         const token = JWT.sign({
             _id: user._id.toString(),
-            email: user.email,
+            phoneNum: user.phoneNum,
             role: 'no-role',
             privileges: user.privileges
         });

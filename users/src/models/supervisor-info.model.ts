@@ -11,12 +11,13 @@ const supervisorInfoSchema = new Schema<ISupervisorInfo>({
         type: String,
         required: true
     },
-    phoneNum: {
+    email: {
         type: String,
         required: true
     },
     image: {
-        type: String
+        type: String,
+        required: true
     }
 },
 {

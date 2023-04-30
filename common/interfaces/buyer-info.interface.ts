@@ -4,7 +4,7 @@ import { roles } from '../enums/roles.enum';
 
 export interface BuyerInfo {
     role: roles.Buyer,
-    image?: string,
+    image: string,
     business: string,
     company?: {
         name: string,

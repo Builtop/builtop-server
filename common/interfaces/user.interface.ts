@@ -4,7 +4,8 @@ import { infoType } from '../enums/info-type.enum';
 import { userStatus } from '../enums/user-status.enum';
 
 export interface User<T> {
-    email: string,
+    // email: string,
+    phoneNum: string,
     password: string,
     privileges: string[],
     infoType?: infoType,

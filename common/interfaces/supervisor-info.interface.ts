@@ -5,8 +5,8 @@ import { roles } from '../enums/roles.enum';
 export interface SupervisorInfo {
     role: roles.Supervisor,
     name: string,
-    phoneNum: string,
-    image?: string
+    email: string,
+    image: string
 }
 
 export interface ISupervisorInfo extends Document, SupervisorInfo {};

@@ -6,7 +6,7 @@ import { roles } from '../enums/roles.enum';
 
 export interface SupplierInfo {
     role: roles.Supplier,
-    image?: string,
+    image: string,
     company: {
         name: string,
         email: string,

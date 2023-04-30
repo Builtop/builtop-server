@@ -8,7 +8,8 @@ const supplierInfoSchema = new Schema<ISupplierInfo>({
         default: roles.Supplier
     },
     image: {
-        type: String
+        type: String,
+        required: true
     },
     company: {
         name: {

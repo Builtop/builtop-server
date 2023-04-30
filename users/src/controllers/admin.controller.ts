@@ -1,34 +1,55 @@
 import { Request, Response, NextFunction } from 'express';
+import { startSession } from 'mongoose';
 import { randomBytes } from 'crypto';
 
 import { addSupervisorInput, approveAccountInput, activateAccountInput, deactivateAccountInput } from '../schemas/admin.schema';
 
 import { UserService } from '../services/user.service';
+import { SupervisorInfoService } from '../services/supervisor-info.service';
 
-import { Validation, ProcessResult, IUser, User, SupervisorInfo, ValidationError, userStatus, infoType, NotFoundError, RejectedActionError } from '../../../common/index';
+import { Validation, ProcessResult, IUser, User, SupervisorInfo, ValidationError, userStatus, infoType, roles, NotFoundError, RejectedActionError } from '../../../common/index';
 
 export const addSupervisor = async (req: Request<{}, {}, addSupervisorInput>, res: Response, next: NextFunction) => {
+    const session = await startSession();
+    session.startTransaction();
+    
     try {
-        const existedSupervisor = await UserService.findByEmail<IUser<SupervisorInfo>>(req.body.email);
+        const existedSupervisor = await UserService.findByPhoneNum<IUser<SupervisorInfo>>(req.body.phoneNum);
         if (existedSupervisor) {
-            throw new ValidationError('the email address you have entered belongs to an existing user');
+            throw new ValidationError('the phone number you have entered belongs to an existing user');
         }
+
+        const supervisorInfo = await SupervisorInfoService.create<SupervisorInfo>({
+            role: roles.Supervisor,
+            name: req.body.name,
+            email: req.body.email,
+            image: req.body.image ? req.body.image : 'No Image'
+        }, session);
 
         const password = randomBytes(8).toString('hex');
 
         const newSupervisor = await UserService.create<User<any>>({
-            email: req.body.email,
+            phoneNum: req.body.phoneNum,
             password: password,
             privileges: [],
             infoType: infoType.SupervisorInfo,
+            info: supervisorInfo._id,
             status: userStatus.Active
-        });
+        }, session);
+
+        const supervisor = await newSupervisor.populate('info');
+
+        await session.commitTransaction();
+        session.endSession();
 
         res.status(201).json(<ProcessResult<IUser<SupervisorInfo>>> {
             success: true,
-            data: newSupervisor
+            data: supervisor
         });
     } catch (err) {
+        await session.abortTransaction();
+        session.endSession();
+
         next(err);
     }
 };
@@ -106,15 +127,32 @@ export const deactivateAccount = async (req: Request<{}, {}, deactivateAccountIn
 };
 
 export const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
+    const session = await startSession();
+    session.startTransaction();
+    
     try {
         Validation.isObjectId(req.params.id);
 
-        await UserService.deleteById(req.params.id);
+        const deletedUser = await UserService.deleteById<IUser<any>>(req.params.id, session);
+
+        if (!deletedUser) {
+            throw new NotFoundError('no user found with this ID');
+        }
+
+        if (deletedUser.info) {
+            // [TODO] more code to be put in here once the supplier and buyer logic is done
+        }
+
+        await session.commitTransaction();
+        session.endSession();
 
         res.status(200).json(<ProcessResult<any>> {
             success: true
         });
     } catch (err) {
+        await session.abortTransaction();
+        session.endSession();
+
         next(err);
     }
 };

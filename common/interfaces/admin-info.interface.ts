@@ -5,8 +5,8 @@ import { roles } from '../enums/roles.enum';
 export interface AdminInfo {
     role: roles,
     name: string,
-    phoneNum: string,
-    image?: string,
+    email: string,
+    image: string,
 }
 
 export interface IAdminInfo extends Document, AdminInfo {};

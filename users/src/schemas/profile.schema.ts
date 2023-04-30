@@ -1,26 +1,6 @@
 import * as yup from 'yup';
 import { Types } from 'mongoose';
 
-export const setupSupervisorSchema = yup.object().shape({
-    _id: yup.mixed().test('valid objectId', 'invalid objectId', (value: unknown) => 
-        typeof value === 'string' && Types.ObjectId.isValid(value)
-    ).required(),
-    name: yup.string().min(3).required().ensure(),
-    phoneNum: yup.string().required().ensure(),
-    image: yup.string().when('image', values => {
-        if (values[0] !== undefined) {
-            return yup.string().min(3).required().ensure();
-        } else {
-            return yup.string().notRequired();
-        }
-    })
-}, 
-[
-    ['image', 'image']
-]);
-
-export type setupSupervisorInput = yup.InferType<typeof setupSupervisorSchema>;
-
 export const editAdminSchema = yup.object().shape({
     _id: yup.mixed().test('valid objectId', 'invalid objectId', (value: unknown) => 
         typeof value === 'string' && Types.ObjectId.isValid(value)

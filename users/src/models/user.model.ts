@@ -3,7 +3,7 @@ import { Schema, model } from 'mongoose';
 import { PasswordManager, IUser, userStatus, infoType } from '../../../common/index';
 
 const userSchema = new Schema<IUser<any>>({
-    email: {
+    phoneNum: {
         type: String,
         required: true
     },

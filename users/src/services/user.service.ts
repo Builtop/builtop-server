@@ -15,7 +15,7 @@ export class UserService extends DBService {
         return await this.Model.findById<T>(_id).populate('info');
     }
 
-    static async findByEmail<T>(email: string) {
-        return await User.findOne<T>({ email }).populate('info');
+    static async findByPhoneNum<T>(phoneNum: string) {
+        return await User.findOne<T>({ phoneNum }).populate('info');
     }
 }

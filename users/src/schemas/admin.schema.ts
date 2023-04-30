@@ -2,8 +2,20 @@ import * as yup from 'yup';
 import { Types } from 'mongoose';
 
 export const addSupervisorSchema = yup.object().shape({
-    email: yup.string().email().matches(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'email must be valid email').required().ensure()
-});
+    phoneNum: yup.string().matches(/^\+(?:[0-9] ?){6,14}[0-9]$/, 'phone number is not valid').required().ensure(),
+    name: yup.string().min(3).required().ensure(),
+    email: yup.string().matches(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, 'email must be valid email').required().ensure(),
+    image: yup.string().when('image', values => {
+        if (values[0] !== undefined) {
+            return yup.string().url().required().ensure();
+        } else {
+            return yup.string().notRequired();
+        }
+    })
+}, 
+[
+    ['image', 'image']
+]);
 
 export type addSupervisorInput = yup.InferType<typeof addSupervisorSchema>;
 

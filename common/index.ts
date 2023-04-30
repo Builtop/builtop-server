@@ -2,6 +2,7 @@
 export * from './enums/info-type.enum';
 export * from './enums/user-status.enum';
 export * from './enums/roles.enum';
+export * from './enums/lookup-status.enum';
 
 // errors
 export * from './errors/custom-error';
@@ -18,6 +19,7 @@ export * from './interfaces/admin-info.interface';
 export * from './interfaces/supervisor-info.interface';
 export * from './interfaces/supplier-info.interface';
 export * from './interfaces/buyer-info.interface';
+export * from './interfaces/experience.interface';
 
 // middlewares
 export * from './middlewares/error-handler.middleware';
