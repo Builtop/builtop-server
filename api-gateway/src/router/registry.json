@@ -10,7 +10,7 @@
             "name": "lookups-dictionary",
             "host": "lookups-dictionary-srv",
             "port": 4000,
-            "url": "http://users-auth-srv:4000"
+            "url": "http://lookups-dictionary-srv:4000"
         }
     }
 }
