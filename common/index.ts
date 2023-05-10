@@ -20,6 +20,7 @@ export * from './interfaces/supervisor-info.interface';
 export * from './interfaces/supplier-info.interface';
 export * from './interfaces/buyer-info.interface';
 export * from './interfaces/experience.interface';
+export * from './interfaces/country.interface';
 
 // middlewares
 export * from './middlewares/error-handler.middleware';
@@ -28,6 +29,7 @@ export * from './middlewares/validate-schema.middleware';
 
 // schemas
 export * from './schemas/user.schema';
+export * from './schemas/country.schema';
 
 // services
 export * from './services/db-service.service';

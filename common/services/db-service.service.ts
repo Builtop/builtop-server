@@ -1,5 +1,14 @@
 import { ObjectId, FilterQuery, Model, ClientSession } from 'mongoose';
 
+export interface DBServiceEx {
+   create<T>(doc: T, session?: ClientSession) : any;
+   findAll<T>(Model: Model<any>,query: FilterQuery<T>, skip: number | undefined , limit: number | undefined ) : any;
+   findBy<T>(Model: Model<any>,_id: string | ObjectId) : any;
+   delete<T>(Model: Model<any>,_id: string | ObjectId, session?: ClientSession) : any;
+}
+
+
+
 export class DBService {
     static Model: Model<any>;
 
