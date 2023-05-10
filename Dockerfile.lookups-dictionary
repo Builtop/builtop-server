@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY lookups-dictionary /app/lookups-dictionary
+COPY common /app/common
+
+WORKDIR /app/common
+RUN npm install
+
+WORKDIR /app/lookups-dictionary
+RUN npm install
+
+CMD [ "npm", "start" ]

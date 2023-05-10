@@ -5,6 +5,12 @@
             "host": "users-auth-srv",
             "port": 3001,
             "url": "http://users-auth-srv:3001"
+        },
+        "lookups-dictionary": {
+            "name": "lookups-dictionary",
+            "host": "lookups-dictionary-srv",
+            "port": 4000,
+            "url": "http://users-auth-srv:4000"
         }
     }
 }

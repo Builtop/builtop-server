@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lookups-dictionary-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lookups-dictionary
+  template:
+    metadata:
+      labels:
+        app: lookups-dictionary
+    spec:
+      containers:
+        - name: lookups-dictionary
+          image: elgharabawi/lookups-dictionary
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lookups-dictionary-srv
+spec:
+  selector:
+    app: lookups-dictionary
+  ports:
+    - name: lookups-dictionary
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
