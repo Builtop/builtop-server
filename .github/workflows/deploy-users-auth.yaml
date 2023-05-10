@@ -1,25 +1,25 @@
-name: deploy-gateway
+name: deploy-users-auth
 
 on: 
   push:
     branches:
       - main
     paths:
-      - 'gateway/**'
+      - 'users-auth/**'
       
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker build -t elgharabawi/gateway -f Dockerfile.gateway .
+      - run: docker build -t elgharabawi/users-auth -f Dockerfile.users-auth .
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env: 
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker push elgharabawi/gateway
+      - run: docker push elgharabawi/users-auth
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save builtop
-      - run: kubectl rollout restart deployment gateway-depl
+      - run: kubectl rollout restart deployment users-auth-depl

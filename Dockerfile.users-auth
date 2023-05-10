@@ -2,13 +2,13 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY gateway /app/gateway
+COPY users-auth /app/users-auth
 COPY common /app/common
 
 WORKDIR /app/common
 RUN npm install
 
-WORKDIR /app/gateway
+WORKDIR /app/users-auth
 RUN npm install
 
 CMD [ "npm", "start" ]

@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction, application } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import axios from 'axios';
 
 import { BadRequestError } from '../../../common/index';

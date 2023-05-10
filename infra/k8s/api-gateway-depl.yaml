@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gateway-depl
+  name: api-gateway-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gateway
+      app: api-gateway
   template:
     metadata:
       labels:
-        app: gateway
+        app: api-gateway
     spec:
       containers:
-        - name: gateway
-          image: elgharabawi/gateway
+        - name: api-gateway
+          image: elgharabawi/api-gateway
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: gateway-srv
+  name: api-gateway-srv
 spec:
   selector:
-    app: gateway
+    app: api-gateway
   ports:
-    - name: gateway
+    - name: api-gateway
       protocol: TCP
       port: 8081
       targetPort: 8081
@@ -32,13 +32,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gateway-balancer
+  name: api-gateway-balancer
 spec: 
   type: LoadBalancer
   selector:
-    app: gateway
+    app: api-gateway
   ports:
-    - name: gateway
+    - name: api-gateway
       protocol: TCP
       port: 8080
       targetPort: 8080

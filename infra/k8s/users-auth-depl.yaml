@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lookups-depl
+  name: users-auth-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: lookups
+      app: users-auth
   template:
     metadata:
       labels:
-        app: lookups
+        app: users-auth
     spec:
       containers:
-        - name: lookups
-          image: elgharabawi/lookups
+        - name: users-auth
+          image: elgharabawi/users-auth
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: lookups-srv
+  name: users-auth-srv
 spec:
   selector:
-    app: lookups
+    app: users-auth
   ports:
-    - name: lookups
+    - name: users-auth
       protocol: TCP
-      port: 3002
-      targetPort: 3002
+      port: 3001
+      targetPort: 3001
