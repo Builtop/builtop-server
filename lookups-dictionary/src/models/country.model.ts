@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from "mongoose";
 
-import {CountrySchema, ICountry } from '../../../common/index';
+import { CountrySchema, ICountry } from "../../../common/index";
 
 const countrySchema = new Schema<ICountry>(...CountrySchema);
 
-export const Country = model<ICountry>('Countries', countrySchema);
+export const Country = model<ICountry>("Countries", countrySchema);

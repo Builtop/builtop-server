@@ -1,26 +1,28 @@
 import { ClientSession } from "mongodb";
 import { FilterQuery, Model, Schema } from "mongoose";
-import { DBServiceEx } from "../../../common";
 import { Country } from "../models/country.model";
+import { DBService } from "../../../common";
 
-export class CountriesService implements DBServiceEx {
-   
-    findAll<T>(Model: Model<any, {}, {}, {}, any, any>, query: FilterQuery<T>, skip: number | undefined, limit: number | undefined) {
-        throw new Error("Method not implemented.");
-    }
-    findBy<T>(Model: Model<any, {}, {}, {}, any, any>, _id: string | Schema.Types.ObjectId) {
-        throw new Error("Method not implemented.");
-    }
-    delete<T>(Model: Model<any, {}, {}, {}, any, any>, _id: string | Schema.Types.ObjectId, session?: ClientSession | undefined) {
-        throw new Error("Method not implemented.");
-    }
-     async create<T>(doc: T, session?: ClientSession | undefined) {
-        try {
-            const country = await Country.create(doc);
-            return country;
-        } catch (e: any) {
-            throw new Error(e);
-        }
-    }
+export class CountriesService {
+  static Model = Country;
 
+  static async create<T>(doc: T, session?: ClientSession | undefined) {
+    const newDoc = new this.Model(doc);
+
+    return await newDoc.save();
+  }
+  static async findById<T>(_id: string) {
+    return await this.Model.findById<T>(_id)
+      .populate("createdUser")
+      .then((p) => console.log(p))
+      .catch((error) => console.log(error));
+  }
+
+  static async findAll<T>(
+    query: FilterQuery<T>,
+    skip: number | undefined = 0,
+    limit: number | undefined = 15
+  ) {
+    return await this.Model.find<T>(query).skip(skip).limit(limit);
+  }
 }

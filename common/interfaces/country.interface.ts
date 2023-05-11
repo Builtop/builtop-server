@@ -1,14 +1,14 @@
-import { Document, ObjectId } from 'mongoose';
+import { Document, ObjectId } from "mongoose";
 
-import { IUser } from '../interfaces/user.interface';
-import { lookupStatus } from '../enums/lookup-status.enum';
-import { Latlng } from '../schemas/country.schema';
+import { IUser } from "../interfaces/user.interface";
+import { lookupStatus } from "../enums/lookup-status.enum";
+import { Latlng } from "./latlng";
 
-export interface Country {
-    name: string,
-    latlng : Latlng
-    createdUser: IUser<any>,
-    status: lookupStatus
+export interface CountryData {
+  name: string;
+  latlng: Latlng;
+  createdUser: ObjectId;
+  status: lookupStatus;
 }
 
-export interface ICountry extends Document, Country {};
+export interface ICountry extends Document, CountryData {}
