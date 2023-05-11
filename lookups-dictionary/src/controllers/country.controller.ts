@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { addCountryInput } from "../validation-schemas/country-validation.schema";
 import { CountriesService } from "../services/countries.service";
-import { ObjectId, startSession } from "mongoose";
+import { FilterQuery, ObjectId, startSession } from "mongoose";
 import {
   CountrySchema,
   ICountry,
@@ -45,6 +45,39 @@ export async function findByIdHandler(
     res.status(201).json(<ProcessResult<ICountry>>{
       success: true,
       data: country,
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+export async function deleteHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const country = await CountriesService.delete(req.params.id);
+
+    res.status(201).json(<ProcessResult<ICountry>>{
+      success: true,
+      data: country,
+    });
+  } catch (e) {
+    next(e);
+  }
+}
+
+export async function findAllHandler(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const countryList = await CountriesService.findAll({});
+
+    res.status(201).json(<ProcessResult<[ICountry]>>{
+      success: true,
+      data: countryList,
     });
   } catch (e) {
     next(e);

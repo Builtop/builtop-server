@@ -5,7 +5,6 @@ import { DBService } from "../../../common";
 
 export class CountriesService {
   static Model = Country;
-
   static async create<T>(doc: T, session?: ClientSession | undefined) {
     const newDoc = new this.Model(doc);
 
@@ -17,12 +16,21 @@ export class CountriesService {
       select: "_id phoneNum",
     });
   }
+  static async delete<T>(_id: string, session?: ClientSession) {
+    return await this.Model.findByIdAndDelete(_id, session);
+  }
 
   static async findAll<T>(
     query: FilterQuery<T>,
     skip: number | undefined = 0,
     limit: number | undefined = 15
   ) {
-    return await this.Model.find<T>(query).skip(skip).limit(limit);
+    return await this.Model.find<T>(query)
+      .populate({
+        path: "createdUser",
+        select: "_id phoneNum",
+      })
+      .skip(skip)
+      .limit(limit);
   }
 }

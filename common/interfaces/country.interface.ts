@@ -4,11 +4,11 @@ import { IUser } from "../interfaces/user.interface";
 import { lookupStatus } from "../enums/lookup-status.enum";
 import { Latlng } from "./latlng";
 
-export interface Country {
+export interface CountryData {
   name: string;
   latlng: Latlng;
   createdUser: ObjectId | IUser<any>;
   status: lookupStatus;
 }
 
-export interface ICountry extends Document, Country {}
+export interface ICountry extends Document, CountryData {}
