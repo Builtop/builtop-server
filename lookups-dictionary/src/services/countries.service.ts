@@ -12,10 +12,7 @@ export class CountriesService {
     return await newDoc.save();
   }
   static async findById<T>(_id: string) {
-    return await this.Model.findById<T>(_id)
-      .populate("createdUser")
-      .then((p) => console.log(p))
-      .catch((error) => console.log(error));
+    return await this.Model.findById<T>(_id).populate("createdUser");
   }
 
   static async findAll<T>(
