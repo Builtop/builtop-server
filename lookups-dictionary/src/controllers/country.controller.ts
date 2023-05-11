@@ -5,7 +5,6 @@ import { ObjectId, startSession } from "mongoose";
 import {
   CountrySchema,
   ICountry,
-  CountryData,
   ProcessResult,
   UserSchema,
   lookupStatus,
@@ -19,7 +18,7 @@ export async function createCountryHandler(
   next: NextFunction
 ) {
   try {
-    const newCountry = await CountriesService.create<CountryData>({
+    const newCountry = await CountriesService.create({
       name: req.body.name ?? "",
       latlng: req.body?.latlng as Latlng,
       createdUser: req.body?.createdUser as ObjectId,
@@ -42,7 +41,7 @@ export async function findByIdHandler(
 ) {
   try {
     const country = await CountriesService.findById(req.params.id);
-    console.log(country);
+
     res.status(201).json(<ProcessResult<ICountry>>{
       success: true,
       data: country,

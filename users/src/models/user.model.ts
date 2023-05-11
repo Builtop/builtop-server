@@ -1,16 +1,16 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from "mongoose";
 
-import { PasswordManager, IUser, UserSchema } from '../../../common/index';
+import { PasswordManager, IUser, UserSchema } from "../../../common/index";
 
 const userSchema = new Schema<IUser<any>>(...UserSchema);
 
-userSchema.pre('save', async function(done) {
-    if (this.isModified('password')) {
-        const hashedPassword = await PasswordManager.hash(this.get('password'));
-        this.set('password', hashedPassword);
-    }
+userSchema.pre("save", async function (done) {
+  if (this.isModified("password")) {
+    const hashedPassword = await PasswordManager.hash(this.get("password"));
+    this.set("password", hashedPassword);
+  }
 
-    done();
+  done();
 });
 
-export const User = model<IUser<any>>('User', userSchema);
+export const User = model<IUser<any>>("User", userSchema);
