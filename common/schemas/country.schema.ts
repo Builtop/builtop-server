@@ -16,7 +16,7 @@ export const CountrySchema = [
     },
     createdUser: {
       type: Schema.Types.ObjectId,
-      refPath: "User",
+      ref: "User",
       required: true,
     },
     status: {

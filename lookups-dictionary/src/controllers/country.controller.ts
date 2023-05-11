@@ -18,6 +18,8 @@ export async function createCountryHandler(
   next: NextFunction
 ) {
   try {
+    // TODO FILL USER DTA FROM TOKEN
+    
     const newCountry = await CountriesService.create({
       name: req.body.name ?? "",
       latlng: req.body?.latlng as Latlng,
