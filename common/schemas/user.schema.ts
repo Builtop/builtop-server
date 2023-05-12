@@ -20,13 +20,13 @@ export const UserSchema = [
         privileges: [
             { type: String }
         ],
-        infoType: {
+        infoColl: {
             type: String,
             enum: infoType
         },
         info: {
             type: Schema.Types.ObjectId,
-            refPath: 'infoType',
+            refPath: 'infoColl',
         },
         status: {
             type: String,
@@ -38,7 +38,7 @@ export const UserSchema = [
         toJSON: {
             transform(doc: any, ret: any) {
                 delete ret.password;
-                delete ret.infoType;
+                delete ret.infoColl;
                 delete ret.__v;
             }
         },
