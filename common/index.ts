@@ -15,6 +15,7 @@ export * from './errors/validation.error';
 
 // interfaces
 export * from './interfaces/process-result.interface';
+export * from './interfaces/auth-request.interface';
 export * from './interfaces/user.interface';
 export * from './interfaces/admin-info.interface';
 export * from './interfaces/supervisor-info.interface';
@@ -26,6 +27,7 @@ export * from './interfaces/country.interface';
 export * from './middlewares/error-handler.middleware';
 export * from './middlewares/route-catcher.middleware';
 export * from './middlewares/validate-schema.middleware';
+export * from './middlewares/is-auth.middleware';
 
 // schemas
 export * from './schemas/user.schema';

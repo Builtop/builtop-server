@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY file-manager /app/file-manager
+COPY common /app/common
+
+WORKDIR /app/common
+RUN npm install
+
+WORKDIR /app/file-manager
+RUN npm install
+
+CMD [ "npm", "start" ]
