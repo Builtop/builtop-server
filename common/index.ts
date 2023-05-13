@@ -22,6 +22,7 @@ export * from './interfaces/supervisor-info.interface';
 export * from './interfaces/supplier-info.interface';
 export * from './interfaces/buyer-info.interface';
 export * from './interfaces/country.interface';
+export * from './interfaces/city.interface';
 
 // middlewares
 export * from './middlewares/error-handler.middleware';
@@ -32,6 +33,7 @@ export * from './middlewares/is-auth.middleware';
 // schemas
 export * from './schemas/user.schema';
 export * from './schemas/country.schema';
+export * from './schemas/city.schema';
 
 // services
 export * from './services/password-manager.service';

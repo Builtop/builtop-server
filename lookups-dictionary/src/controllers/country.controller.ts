@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 import { addCountryInput } from "../validation-schemas/country-validation.schema";
-import { CountriesService } from "../services/countries.service";
 import { FilterQuery, isValidObjectId, ObjectId, startSession } from "mongoose";
 import {
   CountrySchema,
@@ -13,6 +12,7 @@ import {
 import { Latlng } from "../../../common/interfaces/latlng";
 import { Country } from "../models/country.model";
 import { CreatedUser } from "../../../common/interfaces/created-user.interface";
+import { CountryService } from "../services/country.service";
 
 export async function createCountryHandler(
   req: Request<{}, {}, addCountryInput>,
@@ -21,7 +21,7 @@ export async function createCountryHandler(
 ) {
   try {
     // TODO FILL USER DTA FROM TOKEN
-    const newCountry = await CountriesService.create({
+    const newCountry = await CountryService.create({
       name: req.body.name ?? "",
       latlng: req.body?.latlng as Latlng,
       createdUser: req.body?.createdUser as CreatedUser,
@@ -43,7 +43,7 @@ export async function findByIdHandler(
   next: NextFunction
 ) {
   try {
-    const country = await CountriesService.findById(req.params.id);
+    const country = await CountryService.findById(req.params.id);
 
     if (!country){
       throw new NotFoundError('no country found with this ID');
@@ -63,7 +63,7 @@ export async function deleteHandler(
   next: NextFunction
 ) {
   try {
-    const country = await CountriesService.delete(req.params.id);
+    const country = await CountryService.delete(req.params.id);
     if (!country){
       throw new NotFoundError('no country found with this ID');
     }
@@ -87,7 +87,7 @@ export async function findAllHandler(
   next: NextFunction
 ) {
   try {
-    const countryList = await CountriesService.findAll({});
+    const countryList = await CountryService.findAll({});
 
     res.status(201).json(<ProcessResult<[ICountry]>>{
       success: true,
@@ -105,7 +105,7 @@ export async function findAndUpdateHandler(
 ) {
   try {
     let id = req.params.id;
-    const country = await CountriesService.findAndUpdate({_id: id},req.body,{new : true});
+    const country = await CountryService.findAndUpdate({_id: id},req.body,{new : true});
     if (!country){
       throw new NotFoundError('no country found with this ID');
     }

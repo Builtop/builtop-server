@@ -10,6 +10,8 @@ import {
   findByIdHandler,
 } from "./controllers/country.controller";
 import { addCountrySchema } from "./validation-schemas/country-validation.schema";
+import { addCitySchema } from "./validation-schemas/city-validation.schema";
+import { createCityHandler, findAllCitiesHandler } from "./controllers/city.controller";
 
 const router = express.Router();
 
@@ -24,4 +26,7 @@ router.post("/api/country", json(),validateSchema(addCountrySchema), createCount
 router.put("/api/country/:id", json(), findAndUpdateHandler);
 router.delete("/api/country/:id", deleteHandler);
 // cities operations
+router.get("/api/city", json(), findAllCitiesHandler);
+router.post("/api/city/:countryId", json(),validateSchema(addCitySchema), createCityHandler);
+
 export default router;

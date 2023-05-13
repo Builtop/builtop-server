@@ -2,7 +2,7 @@ import { ClientSession } from "mongodb";
 import  { FilterQuery, Model, Schema ,ObjectId, Types, UpdateQuery, QueryOptions} from "mongoose";
 import { Country } from "../models/country.model";
 
-export class CountriesService {
+export class CountryService {
   static Model = Country;
   static async create<T>(doc: T, session?: ClientSession | undefined) {
     const newDoc = new this.Model(doc);
