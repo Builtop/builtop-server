@@ -1,7 +1,6 @@
 import { ClientSession } from "mongodb";
-import { FilterQuery, Model, Schema } from "mongoose";
+import  { FilterQuery, Model, Schema ,ObjectId, Types, UpdateQuery, QueryOptions} from "mongoose";
 import { Country } from "../models/country.model";
-import { DBService } from "../../../common";
 
 export class CountriesService {
   static Model = Country;
@@ -11,10 +10,7 @@ export class CountriesService {
     return await newDoc.save();
   }
   static async findById<T>(_id: string) {
-    return await this.Model.findById<T>(_id).populate({
-      path: "createdUser",
-      select: "_id phoneNum",
-    });
+    return await this.Model.findById<T>(_id);
   }
   static async delete<T>(_id: string, session?: ClientSession) {
     return await this.Model.findByIdAndDelete(_id, session);
@@ -26,11 +22,19 @@ export class CountriesService {
     limit: number | undefined = 15
   ) {
     return await this.Model.find<T>(query)
-      .populate({
-        path: "createdUser",
-        select: "_id phoneNum",
-      })
       .skip(skip)
       .limit(limit);
   }
+
+
+  static async findAndUpdate<T>(
+    query: FilterQuery<T>,
+    update: UpdateQuery<T>,
+    options: QueryOptions
+) {
+    return this.Model.findOneAndUpdate(query, update, options);
+}
+
+
+  
 }

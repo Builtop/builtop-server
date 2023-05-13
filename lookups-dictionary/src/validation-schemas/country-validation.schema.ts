@@ -1,6 +1,7 @@
 import * as yup from "yup";
 import { Types } from "mongoose";
 import { Latlng } from "../../../common/interfaces/latlng";
+import { CreatedUser } from "../../../common/interfaces/created-user.interface";
 
 export const addCountrySchema = yup.object().shape(
   {
@@ -11,19 +12,26 @@ export const addCountrySchema = yup.object().shape(
         return yup.string().notRequired();
       }
     }),
-    latlng: yup.object<Latlng>({
+    latlng: yup.object<Latlng>().shape({
       lat: yup.string(),
       lng: yup.string(),
     }),
-    createdUser: yup
-      .mixed()
-      .test(
-        "valid objectId",
-        "invalid objectId",
-        (value: unknown) =>
-          typeof value === "string" && Types.ObjectId.isValid(value)
-      )
-      .required(),
+    createdUser:yup.object<CreatedUser>().shape(
+      {
+        _id:yup
+        .mixed()
+        .test(
+          "valid objectId",
+          "invalid objectId",
+          (value: unknown) =>
+            typeof value === "string" && Types.ObjectId.isValid(value)
+        )
+        .required(),
+        email:yup.string().required(),
+        phoneNum: yup.string().required(),
+      }
+    ),
+    image: yup.string(),
     status: yup.string().required(),
   },
   [["name", "name"]]

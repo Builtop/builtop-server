@@ -4,6 +4,7 @@ import { infoType } from "../enums/info-type.enum";
 import { userStatus } from "../enums/user-status.enum";
 import { UserSchema } from "./user.schema";
 import { Latlng } from "../interfaces/latlng";
+import { CreatedUser } from "../interfaces/created-user.interface";
 
 export const CountrySchema = [
   {
@@ -15,9 +16,11 @@ export const CountrySchema = [
       type: Object as () => Latlng,
     },
     createdUser: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+      type: Object as () => CreatedUser,
       required: true,
+    },
+    image:{
+      type: String
     },
     status: {
       type: String,

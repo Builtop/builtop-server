@@ -5,10 +5,11 @@ import { lookupStatus } from "../enums/lookup-status.enum";
 import { Latlng } from "./latlng";
 
 export interface CountryData {
-  name: string;
-  latlng: Latlng;
-  createdUser: ObjectId | IUser<any>;
-  status: lookupStatus;
+  name: string,
+  latlng?: Latlng,
+  createdUser: ObjectId | IUser<any>,
+  image?: string,
+  status: lookupStatus,
 }
 
 export interface ICountry extends Document, CountryData {}
