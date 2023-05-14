@@ -8,6 +8,7 @@ import {
   UserSchema,
   lookupStatus,
   NotFoundError,
+  BadRequestError,
 } from "../../../common";
 import { Latlng } from "../../../common/interfaces/latlng";
 import { Country } from "../models/country.model";
@@ -87,8 +88,11 @@ export async function findAllHandler(
   next: NextFunction
 ) {
   try {
-    const countryList = await CountryService.findAll({});
 
+    if (!req.query.skip || !req.query.limit) {
+      throw new BadRequestError('skip query value or limit query value is not defined');
+  }
+    const countryList = await CountryService.findAll<ICountry>({},+req.query.skip, +req.query.limit);
     res.status(201).json(<ProcessResult<[ICountry]>>{
       success: true,
       data: countryList,

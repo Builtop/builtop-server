@@ -10,6 +10,7 @@ import {
   NotFoundError,
   CityData,
   ICity,
+  BadRequestError,
 } from "../../../common";
 import { Latlng } from "../../../common/interfaces/latlng";
 import { Country } from "../models/country.model";
@@ -57,7 +58,10 @@ export async function findAllCitiesHandler(
   next: NextFunction
 ) {
   try {
-    const cityList = await CityService.findAll({});
+    if (!req.query.skip || !req.query.limit) {
+      throw new BadRequestError('skip query value or limit query value is not defined');
+  }
+    const cityList = await CityService.findAll<ICity>({},+req.query.skip, +req.query.limit);
 
     res.status(201).json(<ProcessResult<[ICity]>>{
       success: true,
