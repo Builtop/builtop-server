@@ -16,9 +16,8 @@ export const addCountrySchema = yup.object().shape(
       lat: yup.string(),
       lng: yup.string(),
     }),
-    createdUser:yup.object<CreatedUser>().shape(
-      {
-        _id:yup
+    createdUser: yup.object<CreatedUser>().shape({
+      _id: yup
         .mixed()
         .test(
           "valid objectId",
@@ -27,10 +26,9 @@ export const addCountrySchema = yup.object().shape(
             typeof value === "string" && Types.ObjectId.isValid(value)
         )
         .required(),
-        email:yup.string().required(),
-        phoneNum: yup.string().required(),
-      }
-    ),
+      email: yup.string().required(),
+      phoneNum: yup.string().required(),
+    }),
     image: yup.string(),
     status: yup.string().required(),
   },

@@ -1,5 +1,13 @@
 import { ClientSession } from "mongodb";
-import  { FilterQuery, Model, Schema ,ObjectId, Types, UpdateQuery, QueryOptions} from "mongoose";
+import {
+  FilterQuery,
+  Model,
+  Schema,
+  ObjectId,
+  Types,
+  UpdateQuery,
+  QueryOptions,
+} from "mongoose";
 import { City } from "../models/city.model";
 
 export class CityService {
@@ -22,17 +30,18 @@ export class CityService {
     limit: number | undefined = 15
   ) {
     return await this.Model.find<T>(query)
-    .populate('country')
+      .populate("country")
       .skip(skip)
       .limit(limit);
   }
-
 
   static async findAndUpdate<T>(
     query: FilterQuery<T>,
     update: UpdateQuery<T>,
     options: QueryOptions
-) {
-    return this.Model.findOneAndUpdate(query, update, options);
-}
+  ) {
+    return this.Model.findOneAndUpdate(query, update, options).populate(
+      "country"
+    );
+  }
 }
