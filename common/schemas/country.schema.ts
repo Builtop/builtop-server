@@ -5,11 +5,12 @@ import { userStatus } from "../enums/user-status.enum";
 import { UserSchema } from "./user.schema";
 import { Latlng } from "../interfaces/latlng";
 import { CreatedUser } from "../interfaces/created-user.interface";
+import { EnAr } from "../interfaces/enAr";
 
 export const CountrySchema = [
   {
     name: {
-      type: String,
+      type: Object as () => EnAr,
       required: true,
     },
     latlng: {
