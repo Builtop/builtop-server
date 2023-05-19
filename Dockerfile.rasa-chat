@@ -2,9 +2,9 @@ FROM ubuntu
 
 WORKDIR /app
 
-RUN sudo apt-get update
-RUN sudo apt-get install python3-pip
-RUN sudo apt-get install python3.10-venv
+RUN apt-get update
+RUN apt-get install python3-pip
+RUN apt-get install python3.10-venv
 RUN python3 -m venv ./venv
 RUN source ./venv/bin/activate
 RUN pip3 install -U pip
