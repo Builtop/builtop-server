@@ -13,4 +13,4 @@ RUN pip3 install rasa
 
 COPY rasa-chat/rasa-assistant /app
 
-CMD ["rasa", "run", "--model", "./rasa-assistant/models/20230518-235803-relaxed-peak.tar.gz", "--enable-api", "--cors", "\"\*\""]
+CMD . ./venv/bin/activate && rasa run --model ./rasa-assistant/models/20230518-235803-relaxed-peak.tar.gz --enable-api --cors "*"
