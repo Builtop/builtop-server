@@ -1,0 +1,468 @@
+version: "3.1"
+
+intents:
+  - recycling_in_a_neighborhood
+  - importance_of_recycling
+  - events_and_entertainment
+  - carbon_footprint
+  - reduce_water_usage
+  - food_waste
+  - single_use_plastic
+  - sustainable_fashion
+  - air_pollution
+  - sustainable_agriculture
+  - start_garden
+  - paper_product
+  - sustainable_tourism
+  - renewable_energy
+  - chemical_usage
+  - impact_of_plastic_pollution
+  - green_technology
+  - meat_consumption
+  - climate_change
+  - ocean_conservation
+  - wildlife_conservation
+  - deforestation
+  - deforestation_def
+  - protect_water_resources
+  - climate_action_def
+  - climate_action_support
+  - ocean_hazards
+  - energy_conservation
+  - pesticides_and_herbicides_def
+  - pesticides_and_herbicides_impact
+  - forest_conservation
+  - reduce_impact_on_forest
+  - impact_on_the_atmosphere
+  - global_warming_def
+  - global_warming_gov_role
+  - global_warming_people_role
+  - global_warming_consequences
+  - paris_agreement
+  - carbon_offsetting
+  - environment_help
+  - biodegradable_def
+  - compostable_def
+  - difference_compostable_biodegradable
+  - e_waste_def
+  - consequences_e_waste
+  - impact_e_waste
+  - recycle_e_waste
+  - endangered_species
+  - endangered_species_protect
+  - climate_anxiety
+  - climate_anxiety_reasons
+  - climate_anxiety_help
+  - paper_waste_impact
+  - paper_waste_sol
+  - earthquakes_impact
+  - ozone_hole_def
+  - ozone_hole_reasons
+  - ozone_hole_impact
+  - amazon_rainforest
+  - acid_rain_def
+  - acid_rain_impact
+  - acid_rain_reduce
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+
+responses:
+  utter_happy:
+  - text: "I am happy"
+
+  utter_sad:
+  - text: "I am sad"
+
+  utter_greet:
+  - text: "Hi"
+
+  utter_iamabot:
+  - text: "I am a bot"
+
+  utter_recycling_in_a_neighborhood:
+  - text: "A neighbourhood can encourage residents to recycle by providing accessible and clearly labelled recycling bins, offering educational resources on the benefits of recycling."
+  - text: "A neighbourhood can incentivize residents to recycle by offering rewards or prizes for those who consistently participate in recycling programs. Another way is by setting recycling goals and celebrating achievements as a community."
+  - text: "A neighbourhood can create a culture of recycling by regularly communicating with residents about the importance of recycling and sustainability, hosting recycling events and activities, and providing resources and information on how to properly recycle different materials."
+
+  utter_importance_of_recycling:
+  - text: "Recycling is important for the environment and society because it helps to reduce waste in landfills, conserve natural resources, save energy, reduce greenhouse gas emissions, and create jobs in the recycling industry."
+  - text: "Recycling contributes to the well-being of both the environment and society by reducing pollution and the depletion of natural resources, promoting sustainability, and creating economic opportunities in the recycling sector."
+  - text: "Recycling benefits the environment and society as a whole by reducing the negative impact of waste disposal, conserving resources, promoting environmental awareness and responsibility, and supporting sustainable development."
+
+  utter_carbon_footprint:
+  - text: "Carbon footprint refers to the total amount of greenhouse gases emitted by an individual, organization, or activity. It impacts the environment by contributing to climate change and other environmental problems."
+  - text: "Carbon footprint can be defined as the amount of carbon dioxide and other greenhouse gases emitted by a person or organization. Its implications on the environment include climate change, air pollution, and other environmental issues."
+  - text: "Carbon footprint refers to the amount of carbon dioxide and other greenhouse gases released into the atmosphere as a result of human activities. It has environmental consequences such as global warming, ocean acidification, and habitat destruction for wildlife."
+  - text: "Carbon footprint is a measure of the impact of human activities on the environment, particularly through the emission of greenhouse gases such as carbon dioxide."
+
+  utter_reduce_water_usage:
+  - text: "Individuals can reduce their water usage at home by fixing leaks, taking shorter showers, using water-efficient appliances, and minimizing outdoor water usage."
+  - text: "People can conserve water in their homes by using water-saving fixtures, reducing outdoor water use, practicing responsible landscaping, and being mindful of water usage when performing daily tasks such as washing dishes or doing laundry."
+  - text: "You can decrease your water usage and promote water conservation by implementing efficient irrigation systems, using native plants in landscaping, repairing leaks, and utilizing greywater systems for non-potable water needs."
+
+  utter_food_waste:
+  - text: "Individuals and households can reduce food waste by planning meals, buying only what is needed, properly storing food, composting food scraps, and donating excess food to those in need."
+  - text: "People can decrease food waste by shopping smartly, preparing meals in advance, using leftovers, and being mindful of expiration dates. They can also support sustainable food practices by buying locally and choosing foods with minimal packaging."
+  - text: "Measures that can be taken to address food waste include planning meals, using leftovers, shopping with a list, and donating excess food. By being conscious of food waste and taking steps to reduce it, individuals and households can make a positive impact on the environment and contribute to sustainable food consumption practices."
+
+  utter_single_use_plastic:
+  - text: "Individuals can reduce their consumption of single-use plastics by using reusable bags, bottles, and containers, avoiding single-use plastic straws and utensils, and choosing products with minimal or recyclable packaging."
+  - text: "People can decrease their reliance on single-use plastics by bringing their own reusable items, choosing alternatives to single-use plastics, and supporting companies that prioritize sustainable packaging and production practices."
+  - text: "Individuals can take action to reduce their use of single-use plastics by making small changes in their daily habits, such as carrying a reusable water bottle or coffee cup, refusing plastic bags, and choosing products made from sustainable materials."
+ 
+  utter_sustainable_fashion:
+  - text: "Resources for learning about sustainable fashion practices include online courses, blogs, podcasts, and documentaries, as well as attending workshops and events hosted by sustainable fashion organizations."
+  - text: "Individuals can increase their knowledge of sustainable fashion by researching brands, materials, and production methods, and by seeking out information from reliable sources such as sustainable fashion organizations and industry experts."
+  - text: "People can take steps to educate themselves on sustainable fashion by reading about industry issues and trends, attending sustainable fashion events, and supporting sustainable brands and organizations."
+
+  utter_air_pollution:
+  - text: "Sources of air pollution include transportation, industrial emissions, and fossil fuel combustion. To reduce air pollution, measures such as using public transportation, reducing energy consumption, and supporting renewable energy sources can be taken."
+  - text: "Air pollution can have serious effects on human health, including respiratory problems and heart disease. To improve air quality, individuals can reduce their energy consumption, support cleaner transportation options, and advocate for stronger regulations on industrial emissions."
+  - text: "Air pollution is a significant environmental issue that has serious impacts on human health and the planet. To reduce air pollution, measures such as supporting renewable energy, using public transportation, and advocating for stronger regulations on industrial emissions can be taken."
+ 
+  utter_sustainable_agriculture:
+  - text: "Resources for learning about sustainable agriculture practices include online courses, books, workshops, and apprenticeships, as well as participating in community-supported agriculture (CSA) programs and joining local farming organizations."
+  - text: "Individuals can increase their knowledge of sustainable agriculture by researching farming methods, attending workshops and events, and getting involved in local farming organizations."
+  - text: "Sustainable agriculture is an approach to farming that focuses on preserving natural resources and promoting biodiversity. To learn about sustainable agriculture practices, individuals can access a range of resources, such as online courses, workshops, and apprenticeships, and participate in community-supported agriculture programs."
+  
+  utter_start_garden:
+  - text: "Beginners can start a garden by selecting a location with adequate sunlight and soil, choosing appropriate plants for the climate, and considering factors such as watering, fertilization, and pest control."
+  - text: "Essential steps when starting a garden include selecting a suitable location, preparing the soil, choosing appropriate plants, and providing proper care and maintenance. By following these steps, gardeners can increase the likelihood of a successful and productive garden."
+  - text: "Starting a garden can be a rewarding and enjoyable experience for individuals of all skill levels. Some tips for starting a garden include selecting a suitable location, choosing appropriate plants, and providing proper care and maintenance. By considering factors such as sunlight, soil, and climate, gardeners can increase the likelihood of a successful garden."
+ 
+  utter_paper_product:
+  - text: "Individuals can reduce paper product usage by opting for digital options, using reusable products such as cloth napkins, and choosing products made from sustainable materials such as bamboo or recycled paper."
+  - text: "Organizations and businesses can reduce their paper product usage by implementing digital solutions, using double-sided printing, and providing employees with reusable products."
+  - text: "Creative ways to reduce paper product usage include using paperless billing, using reusable shopping bags, and opting for e-books or library books. By incorporating these habits into everyday life."
+
+  utter_sustainable_tourism:
+  - text: "You can educate yourself on sustainable tourism by reading books and articles, attending workshops and conferences, and consulting with sustainable tourism organizations and experts."
+  - text: "Sustainable tourism practices include supporting local communities, choosing environmentally-friendly accommodations, and minimizing waste and energy usage. You can incorporate these practices into your travels by supporting local businesses, using eco-friendly transportation, and being mindful of your environmental impact."
+  - text: "Learning about sustainable tourism practices can help minimize the negative impact of tourism on the environment and local communities. Ways to learn about sustainable tourism include attending workshops and conferences, consulting with sustainable tourism organizations and experts, and reading books and articles."
+
+  utter_renewable_energy:
+  - text: "There are many resources available to educate yourself on renewable energy, including online courses, books, webinars, and podcasts. You can also attend workshops and seminars, visit renewable energy installations, and participate in renewable energy forums to learn from experts in the field."
+  - text: "You can acquire knowledge about renewable energy through various means such as reading books, attending conferences, taking courses, watching videos, and listening to podcasts. You can also conduct research online, join a renewable energy community."
+  - text: "To gain a deeper understanding of renewable energy, you can explore the science behind renewable energy technologies, understand the economic and policy drivers of renewable energy, and learn about the environmental benefits and challenges of renewable energy."
+
+  utter_chemical_usage:
+  - text: "There are many resources available to educate yourself on reducing chemical usage in your home, including online articles, blogs, and videos, books, webinars, and podcasts. You can also consult with experts in the field, such as environmental scientists, sustainability professionals, or toxicologists."
+  - text: "You can acquire knowledge about reducing chemical usage in your household by researching online, attending workshops, and seminars, watching videos, reading books, or listening to podcasts."
+  - text: "To gain a deeper understanding of reducing chemical usage in your home, you can learn about the potential health and environmental impacts of common household chemicals, understand the labels and ingredients of household products, and explore alternative options for cleaning, pest control, and personal care."
+
+  utter_impact_of_plastic_pollution:
+  - text: "Plastic pollution has a significant impact on the environment, causing harm to ecosystems, disrupting the natural balance, and contributing to climate change. Plastic waste often ends up in oceans, waterways, and landfills, where it can persist for centuries, releasing toxins and microplastics that can damage soil, water quality, and biodiversity."
+  - text: "Plastic pollution poses a threat to wildlife and marine life, causing entanglement, ingestion, and suffocation. Animals can mistake plastic debris for food, leading to internal damage, starvation, and death."
+  - text: "Plastic pollution can have adverse effects on human health, as microplastics and chemicals in plastic can enter the food chain and drinking water. Exposure to plastic pollution has been linked to various health risks, including endocrine disruption, developmental abnormalities."
+
+  utter_green_technology:
+  - text: "There are various ways to educate yourself about green technology, including online courses, attending workshops and seminars, reading books, and participating in forums and online communities."
+  - text: "You can acquire knowledge on green technology through various means such as enrolling in a green technology program or course, joining a green technology group or organization, attending conferences, and watching videos."
+  - text: "Resources available for learning about green technology include online articles, books, journals, and magazines, as well as green technology websites and forums."
+           
+  utter_meat_consumption:
+  - text: "Meat consumption has a significant impact on the environment. It contributes to greenhouse gas emissions, deforestation, water pollution, and land degradation, among other issues."
+  - text: "Eating meat has several environmental consequences, including the depletion of natural resources, the destruction of habitats, and the emission of greenhouse gases that contribute to climate change."
+  - text: "Meat consumption harms the environment in multiple ways, including deforestation, land degradation, water pollution, and greenhouse gas emissions."
+  
+  utter_climate_change:
+  - text: "Climate change is affecting our planet in various ways, including rising temperatures, sea level rise, extreme weather events, and the loss of biodiversity."
+  - text: "Climate change is having a significant impact on the planet, including altering ecosystems, threatening food security, and exacerbating social and economic inequalities."
+  - text: "Climate change is changing our planet in multiple ways, including causing ice and snow to melt, altering weather patterns, and increasing the frequency and intensity of natural disasters."
+
+  utter_ocean_conservation:
+  - text: "Ocean conservation is essential for maintaining healthy marine ecosystems, sustaining fisheries, preserving biodiversity, and mitigating the impacts of climate change."
+  - text: "Ocean conservation benefits the planet in numerous ways, including regulating the climate, supporting livelihoods, protecting wildlife, and preserving natural resources."
+  - text: "Prioritizing ocean conservation is crucial for preserving the ocean's ecological, economic, and cultural value, as well as ensuring the well-being of coastal communities and future generations."
+
+  utter_wildlife_conservation:
+  - text: "Wildlife conservation benefits ecosystems by preserving biodiversity, maintaining ecological balance, and promoting ecosystem services such as pollination and seed dispersal."
+  - text: "Conserving wildlife is critical for sustaining healthy ecosystems, preventing species extinction, preserving genetic diversity, and supporting human livelihoods."
+  - text: "Wildlife conservation benefits society in various ways, including providing recreational opportunities, supporting eco-tourism, and contributing to scientific research and education."
+
+  utter_deforestation:
+  - text: "Deforestation has a significant impact on the environment, including soil erosion, loss of biodiversity, altered water cycles, and increased greenhouse gas emissions."
+  - text: "Deforestation has several environmental impacts, such as affecting climate change, causing habitat loss for wildlife, and altering local and global weather patterns."
+  - text: "Deforestation leads to numerous effects on the planet, including reducing carbon sequestration, decreasing air quality, and negatively impacting the livelihoods of indigenous people and local communities."
+
+  utter_deforestation_def:
+  - text: "Deforestation refers to the clearing, removal, or destruction of forests and other wooded areas for various reasons, such as agriculture, logging, or urbanization."
+  - text: "Deforestation is defined as the permanent or temporary removal of forest cover or trees, often resulting in the degradation or loss of forest ecosystems and their services."
+  - text: "Deforestation is the removal of trees from an area of land that results in the loss of forest cover, ecosystem services, and biodiversity."
+
+  utter_protect_water_resources:
+  - text: "Some strategies for preserving water resources include reducing water consumption, improving water management practices, promoting water conservation, and reducing water pollution."
+  - text: "Conserving water resources can be achieved through measures such as harvesting rainwater, using efficient irrigation systems, reducing water waste, and recycling wastewater."
+  - text: "We can safeguard our water resources by implementing policies and regulations to prevent water pollution, promoting public awareness on water conservation, and investing in infrastructure to ensure access to safe and clean water."
+
+  utter_climate_action_def:
+  - text: "Climate action refers to a range of measures and policies aimed at reducing greenhouse gas emissions, adapting to the impacts of climate change, and promoting sustainability and resilience."
+  - text: "Climate action means taking collective and individual actions to mitigate the effects of climate change, such as reducing carbon emissions, transitioning to renewable energy, and supporting climate adaptation strategies."
+  - text: "Climate action is any effort to address the causes and consequences of climate change, including policies, programs, and actions that reduce greenhouse gas emissions and promote climate resilience."
+
+  utter_climate_action_support:
+  - text: "Promoting climate action can be achieved by supporting policies and initiatives that reduce greenhouse gas emissions, educating others about the impacts of climate change."
+  - text: "Individuals can contribute to climate action by reducing their carbon footprint, supporting renewable energy, promoting sustainable practices."
+  - text: "Businesses and organizations can support climate action by implementing sustainable practices, reducing carbon emissions, investing in renewable energy."
+
+  utter_ocean_hazards:
+  - text: "Pollution from human activities such as oil spills, plastic waste, and chemical runoff from industries can harm marine life and alter the ocean's chemical balance."
+  - text: "Various environmental factors like climate change, ocean acidification, overfishing, and habitat destruction can significantly impact the health of the ocean and its inhabitants."
+  - text: "Human activities, such as littering, overfishing, carbon emissions, and coastal development, are some of the primary drivers of environmental harm to the ocean."
+
+  utter_energy_conservation:
+  - text: "Reducing energy consumption by using energy-efficient appliances, turning off lights and electronics when not in use, and sealing air leaks in buildings are all effective ways to conserve energy."
+  - text: "Individuals can reduce energy use by taking shorter showers, adjusting the thermostat to conserve heating and cooling, using public transportation or carpooling, and choosing energy-efficient transportation methods like biking or walking."
+  - text: "Businesses and organizations can reduce energy consumption by investing in energy-efficient equipment, adopting sustainable practices like recycling, implementing telecommuting policies."
+
+  utter_pesticides_and_herbicides_def:
+  - text: "Pesticides and herbicides are chemical compounds used in agriculture to control pests and weeds that can damage crops."
+  - text: "Pesticides are chemical compounds used to control pests like insects, rodents, and fungi, while herbicides are used to control unwanted plants or weeds."
+  - text: "Pesticides are primarily used to protect crops from pests that can damage them, while herbicides are used to kill or control unwanted plants that can compete with crops for resources like water and nutrients."
+
+  utter_pesticides_and_herbicides_impact:
+  - text: "Pesticides and herbicides can leach into the soil and groundwater, contaminating these resources and potentially harming plants, animals, and humans."
+  - text: "Pesticides and herbicides can harm beneficial organisms like bees and other pollinators, leading to declines in population and affecting ecosystem health and biodiversity."
+  - text: "The overuse and misuse of pesticides and herbicides can lead to the development of resistant pests and weeds, reducing the effectiveness of these chemicals and leading to increased use and potential harm to the environment."
+
+  utter_forest_conservation:
+  - text: "Actions such as illegal logging, deforestation, clearing land for agriculture, and urbanization can harm forests. Other harmful activities include air and water pollution, introducing invasive species, and wildfires caused by human negligence."
+  - text: "Your behavior can harm forests in many ways, such as driving off-road vehicles, starting fires, littering, and using non-sustainable wood products. Your carbon footprint also contributes to climate change, which affects forest health"
+  - text: "You can inadvertently harm forests by consuming products that contribute to deforestation, such as meat, palm oil, and soy products. You can also harm forests by not properly disposing of waste."
+
+  utter_reduce_impact_on_forest:
+  - text: "You can reduce your impact on forests by supporting sustainable forestry practices, reducing your carbon footprint, choosing sustainable products, reducing your use of single-use plastics, and participating in conservation efforts."
+  - text: "To minimize your impact on forests, you can reduce your consumption of products that contribute to deforestation, recycle and dispose of waste properly, use public transportation or carpool."
+  - text: "To be more environmentally conscious and reduce your impact on forests, you can choose to use renewable energy sources, reduce your use of paper products, plant trees, and participate in community-based conservation programs."
+
+  utter_impact_on_the_atmosphere:
+  - text: "You can reduce your impact on the atmosphere by reducing your carbon footprint, using renewable energy sources, driving less or using electric cars, supporting policies and initiatives that promote climate change mitigation, and adopting a more sustainable lifestyle."
+  - text: "To minimize your impact on the environment and reduce your carbon footprint, you can reduce your energy consumption, eat a plant-based diet, compost, use public transportation or bike."
+  - text: "You can reduce your greenhouse gas emissions and help mitigate climate change by using energy-efficient appliances, reducing waste, supporting renewable energy initiatives."
+
+  utter_global_warming_def:
+  - text: "Global warming refers to the long-term rise in Earth's average surface temperature due to the increase of greenhouse gases in the atmosphere, primarily carbon dioxide and methane, which trap heat and cause the Earth's climate to change."
+  - text: "Global warming can be defined as the gradual increase in the Earth's average surface temperature caused by human activities such as burning fossil fuels, deforestation, and agriculture, which release greenhouse gases into the atmosphere and contribute to climate change."
+  - text: "Global warming means that the Earth's average surface temperature is increasing over time due to human activities that release greenhouse gases into the atmosphere, leading to a range of environmental impacts such as sea-level rise, more frequent and severe heatwaves, droughts, and extreme weather events."
+
+  utter_global_warming_gov_role:
+  - text: "The role of governments in reducing the impact of global warming is to implement policies and regulations that reduce greenhouse gas emissions, support renewable energy sources, promote sustainable land use and agriculture practices, and encourage public awareness and action on climate change."
+  - text: "Governments can contribute to mitigating the effects of global warming by setting emissions reduction targets, investing in renewable energy and clean technology, providing incentives for sustainable practices, promoting public transportation and biking infrastructure."
+  - text: "Governments can take a variety of actions to address global warming, such as implementing a carbon tax or cap-and-trade system, regulating emissions from industry and transportation, investing in research and development of low-carbon technology, protecting forests and other natural carbon sinks, and promoting international cooperation on climate change."
+
+  utter_global_warming_people_role:
+  - text: "You can reduce your impact on global warming by using energy-efficient appliances, reducing your meat consumption, supporting renewable energy, reducing your car use, buying locally sourced products, and reducing your waste."
+  - text: "Individuals can reduce their contribution to global warming by adopting more sustainable practices, such as using public transportation, reducing energy use at home, buying eco-friendly products, reducing meat consumption, and supporting renewable energy."
+  - text: "You can take a range of actions to help mitigate global warming, such as reducing your carbon footprint by driving less, eating a plant-based diet, using renewable energy sources, and supporting policies and initiatives that promote climate change mitigation."
+
+  utter_global_warming_consequences:
+  - text: "The consequences of global warming include rising sea levels, more frequent and severe heatwaves, droughts, wildfires, and extreme weather events, as well as impacts on human health, biodiversity, and ecosystems."
+  - text: "Global warming has a range of effects on the environment, such as melting ice caps, sea-level rise, changes in precipitation patterns, ocean acidification, and loss of biodiversity."
+  - text: "Global warming is affecting the world in numerous ways, including changes in weather patterns, natural disasters, rising sea levels, food and water scarcity, and impacts on human health and well-being."
+
+  utter_paris_agreement:
+  - text: "The Paris Agreement is a global treaty that aims to limit global warming to well below 2°C above pre-industrial levels and to pursue efforts to limit it to 1.5°C by bringing all countries together to take ambitious efforts to combat climate change and adapt to its effects, through mitigation, adaptation, and finance."
+  - text: "The Paris Agreement means that countries have agreed to take action to address climate change and its impacts, by submitting emissions reduction targets and plans for climate action, and by establishing a system of transparency and accountability for tracking progress towards those goals."
+  - text: "The Paris Agreement can be defined as a landmark global treaty that represents a collective effort by all nations to address climate change and its impacts, through setting ambitious emissions reduction targets and promoting international cooperation on climate action and finance."
+
+  utter_carbon_offsetting:
+  - text: "Carbon offsetting is a process by which individuals, organizations, or governments reduce their carbon footprint by investing in projects that reduce or remove greenhouse gas emissions, such as renewable energy or reforestation."
+  - text: "Carbon offsetting can be defined as a method of compensating for greenhouse gas emissions by investing in projects that reduce or remove an equivalent amount of emissions from the atmosphere."
+  - text: "The term 'carbon offsetting' refers to a mechanism that allows individuals, businesses, or governments to balance out their greenhouse gas emissions by investing in projects that either reduce emissions or remove carbon from the atmosphere."
+
+  utter_environment_help:
+  - text: "There are several things you can do to help the environment, such as reducing your energy consumption, using public transportation, reducing your waste, and supporting sustainable products and practices."
+  - text: "You can contribute to protecting the environment by adopting eco-friendly habits, such as conserving energy, reducing waste, and making sustainable choices in your daily life."
+  - text: "Taking actions such as reducing your carbon footprint, conserving resources, and supporting environmentally friendly initiatives are all ways to make a positive impact on the environment."
+
+  utter_biodegradable_def:
+  - text: "Biodegradable refers to the ability of a material to break down naturally in the environment, typically through the action of microorganisms, without causing harm to the ecosystem."
+  - text: "Biodegradable materials are substances that can be broken down naturally over time by bacteria, fungi, or other biological processes, returning to the environment in a harmless form."
+  - text: "The term 'biodegradable' refers to materials or substances that can be broken down by natural processes in the environment, without causing harm to living organisms or the ecosystem."
+
+  utter_compostable_def:
+  - text: "Compostable refers to the ability of a material to break down into organic matter that can enrich soil, when placed in a composting environment, without causing harm to the environment."
+  - text: "Compostable refers to products or materials that can be broken down through composting into natural substances, such as soil, without causing harm to the environment."
+  - text: "Compostable means that a product or material is capable of decomposing into natural elements in a composting environment, resulting in nutrient-rich soil that can be used to support plant growth."
+
+  utter_difference_compostable_biodegradable:
+  - text: "Compostable materials break down into organic matter that enriches soil in a composting environment, while biodegradable materials can break down into any substance over time, with or without causing harm to the environment."
+  - text: "Compostable materials break down into organic matter that can enrich soil without causing harm to the environment, whereas biodegradable materials may break down into any substance, including harmful ones."
+  - text: "Compostable materials can break down into nutrient-rich soil in a composting environment without harming the environment, whereas biodegradable materials can break down into any substance, even if it's harmful to the environment."
+
+  utter_e_waste_def:
+  - text: "E-waste refers to discarded electronic devices such as computers, mobile phones, and televisions that have reached the end of their useful life or have become obsolete."
+  - text: "E-waste can be defined as any electronic product that has been discarded, donated, or abandoned, and is no longer usable for its original intended purpose."
+  - text: "E-waste is a term used to describe electronic devices that are no longer wanted or needed and are therefore being disposed of."
+
+  utter_consequences_e_waste:
+  - text: "E-waste can lead to environmental problems such as pollution, as well as health risks due to the toxic chemicals that are released when electronic devices are improperly disposed of."
+  - text: "E-waste can lead to environmental problems such as pollution and the release of toxic chemicals, which can be harmful to both the environment and human health."
+  - text: "E-waste can have negative impacts on the environment and human health, as it can lead to pollution and the release of toxic chemicals."
+
+  utter_impact_e_waste:
+  - text: "You can reduce your impact of e-waste by properly disposing of your electronics, donating or reselling them, and purchasing longer-lasting, repairable devices."
+  - text: "You can decrease the amount of e-waste you produce by reducing your consumption of electronics, properly disposing of your old devices, and choosing more sustainable options when purchasing new electronics."
+  - text: "You can minimize your e-waste footprint by recycling your old electronics, repairing and upgrading your current devices, and purchasing electronics from companies that prioritize sustainability."
+
+  utter_recycle_e_waste:
+  - text: "You can reuse or recycle your old electronics by donating them to charitable organizations, selling them, or taking them to electronics recycling facilities."
+  - text: "Instead of throwing away your old electronics, you can donate them, sell them, or recycle them at an electronics recycling facility."
+  - text: "Some sustainable ways to dispose of old electronics include donating them to charity, selling them, or taking them to an electronics recycling facility."
+
+  utter_endangered_species:
+  - text: "An endangered species is a species of animal or plant that is at risk of becoming extinct due to declining population numbers or threats to their habitat."
+  - text: "An endangered species is defined as a species of animal or plant that is at high risk of becoming extinct due to declining population numbers or threats to their habitat."
+  - text: "When a species is endangered, it means that the population numbers have declined significantly, and the species is at risk of becoming extinct due to various threats."
+
+  utter_endangered_species_protect:
+  - text: "Conservation efforts to protect endangered species include habitat restoration, captive breeding programs, and protected area designations."
+  - text: "We can protect endangered species from extinction by implementing conservation measures such as protecting their habitats, reducing human impacts on their ecosystems, and managing wildlife populations."
+  - text: "Individuals can help conserve endangered species by supporting conservation organizations, reducing their carbon footprint, and avoiding products that contribute to habitat destruction."
+
+  utter_climate_anxiety:
+  - text: "Climate anxiety refers to the stress, fear, and worry about the consequences of climate change on the environment, human life, and society as a whole."
+  - text: "Climate anxiety is a psychological distress that individuals experience due to their concern about the future of the planet in the face of climate change."
+  - text: "Climate anxiety is a term used to describe the emotional and psychological toll that climate change has on people who are worried about the impact it will have on the planet and future generations."
+
+  utter_climate_anxiety_reasons:
+  - text: "Climate anxiety can be caused by a variety of factors, such as increased media coverage of climate change, personal experiences with extreme weather events, and a sense of powerlessness or lack of control over the issue."
+  - text: "Climate change can lead to a range of mental health issues, including anxiety, depression, and post-traumatic stress disorder (PTSD), as people experience loss, grief, and trauma due to the effects of climate change."
+  - text: "As climate change continues to worsen, more people are becoming aware of the severity of the issue and its potential impact on their lives and the world. This awareness, coupled with a lack of action on a global scale, can contribute to an increase in climate anxiety."
+
+  utter_climate_anxiety_help:
+  - text: "Individuals can cope with climate anxiety by seeking support from friends and family, engaging in self-care activities, and taking action to reduce their carbon footprint and advocate for climate action."
+  - text: "Strategies for managing climate anxiety include practicing mindfulness and meditation, staying informed but limiting exposure to negative news, and taking action on climate change in one's personal and professional life."
+  - text: "There are resources available for those experiencing climate anxiety, including therapy, support groups, and online communities. Many organizations also offer resources and tools to help individuals take action on climate change and feel empowered in their efforts."
+
+  utter_paper_waste_impact:
+  - text: "Paper waste can have a significant impact on the environment. When paper is not properly recycled or disposed of, it can end up in landfills, where it takes up space and emits methane, a potent greenhouse gas. Additionally, deforestation to produce paper can lead to the destruction of habitats and loss of biodiversity."
+  - text: "Paper waste can disrupt ecosystems in several ways. For example, when paper products are dumped in water bodies, they can cause water pollution, which can harm aquatic life. Similarly, when paper waste is burned, it releases toxic fumes that can be harmful to both animals and humans."
+  - text: "Paper waste contributes to deforestation, greenhouse gas emissions, and other environmental problems."
+
+  utter_paper_waste_sol:
+  - text: "Some effective ways to minimize paper waste are using digital documents, printing double-sided, recycling paper, and using eco-friendly paper products."
+  - text: "Individuals can contribute to reducing paper waste by using digital means of communication, opting for electronic bills, avoiding unnecessary printing, and recycling paper."
+  - text: "You can contribute to reducing paper waste by using digital means of communication, opting for electronic bills, avoiding unnecessary printing, and recycling paper."
+
+  utter_earthquakes_impact:
+  - text: "The environmental effects of earthquakes can include soil liquefaction, landslides, ground fissures, water contamination, and damage to ecosystems and habitats."
+  - text: "Earthquakes can impact the natural environment by causing changes in topography, soil characteristics, and watercourses, as well as affecting vegetation and wildlife populations."
+  - text: "The impact of earthquakes can include habitat destruction, loss of biodiversity, and changes in ecosystem functioning and resilience."
+
+  utter_ozone_hole_def:
+  - text: "The term 'ozone hole' refers to a region of severely depleted ozone in the Earth's stratosphere that occurs primarily over the polar regions during the springtime."
+  - text: "The ozone hole phenomenon is a reduction in the concentration of ozone in the Earth's stratosphere that results from the release of human-made chemicals, such as chlorofluorocarbons (CFCs), into the atmosphere."
+  - text: "The concept of an ozone hole refers to a localized region of the Earth's atmosphere where the concentration of ozone is significantly lower than in surrounding areas, which is caused by the depletion of ozone due to human-made chemicals."
+
+  utter_ozone_hole_reasons:
+  - text: "The main reasons for the formation of the ozone hole are the release of human-made chemicals, such as chlorofluorocarbons (CFCs), which react with and destroy ozone molecules in the Earth's stratosphere."
+  - text: "The causes of the ozone hole phenomenon are the human-made chemicals, such as CFCs, which are released into the atmosphere and cause the depletion of ozone in the Earth's stratosphere."
+  - text: "The ozone hole occurs due to the release of human-made chemicals, such as CFCs, which break down ozone molecules in the Earth's stratosphere, leading to a reduction in the concentration of ozone."
+
+  utter_ozone_hole_impact:
+  - text: "Individuals can reduce the impact of the ozone hole by using eco-friendly products, minimizing the use of personal vehicles, avoiding the use of products that contain CFCs, and supporting policies that protect the ozone layer."
+  - text: "We can reduce the impact of the ozone hole on the environment by implementing policies and regulations that limit the use of CFCs, promoting the use of alternative products, and supporting international agreements to protect the ozone layer."
+  - text: "To minimize the impact of the ozone hole, actions can be taken such as reducing the use of products that contain CFCs, increasing the use of renewable energy sources, supporting scientific research on the ozone layer, and educating the public about the importance of protecting the ozone layer."
+
+  utter_amazon_rainforest:
+  - text: "The issue with fires in the Amazon rainforest is that they contribute to deforestation, habitat loss, and biodiversity decline, as well as emitting large amounts of carbon dioxide into the atmosphere, exacerbating climate change."
+  - text: "Fires are impacting the Amazon rainforest and its ecosystems by destroying plant and animal habitats, reducing biodiversity, and releasing carbon into the atmosphere, which contributes to climate change."
+  - text: "The environmental consequences of fires in the Amazon rainforest include deforestation, loss of wildlife habitats, soil erosion, air pollution, and carbon emissions, which contribute to climate change."
+
+  utter_acid_rain_def:
+  - text: "Acid rain is a type of rain that has a pH level lower than 5.6, caused by the emission of acidic pollutants, such as sulfur dioxide and nitrogen oxide, into the atmosphere"
+  - text: "The term 'acid rain' refers to precipitation that contains high levels of acidic pollutants, such as sulfuric acid and nitric acid, which can have harmful effects on the environment and human health."
+  - text: "The term 'acid rain' refers to rain, snow, or any other form of precipitation that has a pH level lower than 5.6 due to the presence of acidic pollutants in the atmosphere."
+
+  utter_acid_rain_impact:
+  - text: "The environmental effects of acid rain include soil and water pollution, harm to plants and wildlife, damage to buildings and infrastructure, and a reduction in biodiversity."
+  - text: "Acid rain affects the environment by acidifying soil and water, damaging plant and animal habitats, corroding buildings and structures, and contributing to the decline of species diversity."
+  - text: "The consequences of acid rain on the environment include the acidification of soil and water, which can affect plant growth and wildlife habitats, as well as damage to infrastructure and cultural monuments, and the reduction of biodiversity."
+
+  utter_acid_rain_reduce:
+  - text: "Steps to reduce acid rain include reducing emissions of sulfur dioxide and nitrogen oxides from factories and power plants, using cleaner energy sources, and implementing policies to limit pollution."
+  - text: "We can minimize the impact of acid rain by reducing the emission of pollutants that contribute to it, promoting the use of cleaner energy sources, and enforcing regulations that limit pollution."
+  - text: "Measures to prevent acid rain include reducing emissions from vehicles, power plants, and factories, promoting renewable energy sources, and enforcing regulations that limit pollution."
+
+
+actions:
+  - utter_happy
+  - utter_sad
+  - utter_goodbye
+  - utter_affirm
+  - utter_deny
+  - utter_mood_great
+  - utter_mood_unhappy
+  - utter_recycling_in_a_neighborhood
+  - utter_importance_of_recycling
+  - utter_events_and_entertainment
+  - utter_carbon_footprint
+  - utter_reduce_water_usage
+  - utter_food_waste
+  - utter_single_use_plastic
+  - utter_sustainable_fashion
+  - utter_air_pollution
+  - utter_sustainable_agriculture
+  - utter_start_garden
+  - utter_paper_product
+  - utter_sustainable_tourism
+  - utter_renewable_energy
+  - utter_chemical_usage
+  - utter_impact_of_plastic_pollution
+  - utter_green_technology
+  - utter_meat_consumption
+  - utter_climate_change
+  - utter_ocean_conservation
+  - utter_wildlife_conservation
+  - utter_deforestation 
+  - utter_deforestation_def 
+  - utter_protect_water_resources
+  - utter_climate_action_def
+  - utter_climate_action_support
+  - utter_ocean_hazards
+  - utter_energy_conservation
+  - utter_pesticides_and_herbicides_def
+  - utter_pesticides_and_herbicides_impact
+  - utter_forest_conservation
+  - utter_reduce_impact_on_forest
+  - utter_impact_on_the_atmosphere
+  - utter_global_warming_def
+  - utter_global_warming_gov_role
+  - utter_global_warming_people_role
+  - utter_global_warming_consequences
+  - utter_paris_agreement
+  - utter_carbon_offsetting
+  - utter_environment_help
+  - utter_biodegradable_def
+  - utter_compostable_def
+  - utter_difference_compostable_biodegradable
+  - utter_e_waste_def
+  - utter_consequences_e_waste
+  - utter_impact_e_waste
+  - utter_recycle_e_waste
+  - utter_endangered_species
+  - utter_endangered_species_protect
+  - utter_climate_anxiety
+  - utter_climate_anxiety_reasons
+  - utter_climate_anxiety_help
+  - utter_paper_waste_impact
+  - utter_paper_waste_sol
+  - utter_ozone_hole_def
+  - utter_ozone_hole_reasons
+  - utter_ozone_hole_impact
+  - utter_amazon_rainforest
+  - utter_acid_rain_def
+  - utter_acid_rain_impact
+  - utter_acid_rain_reduce
+  - utter_iamabot
+  - utter_greet
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

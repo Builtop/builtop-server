@@ -1,0 +1,495 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+
+- intent: recycling_in_a_neighborhood
+  examples: |
+    - What are some tactics that a neighbourhood can utilize to increase the amount of recycling done by residents?
+    - How can a neighbourhood incentivize residents to participate in recycling programs?
+    - What steps can a neighbourhood take to create a culture of recycling among its residents?
+
+- intent: importance_of_recycling
+  examples: |
+    - Why is recycling important for the environment and society?
+    - What are the reasons behind the significance of recycling for the environment and society?
+    - How does recycling contribute to the well-being of both the environment and society?
+    - In what ways does recycling benefit the environment and society as a whole?
+- intent: carbon_footprint
+  examples: |
+    - What is carbon footprint and how does it impact the environment?
+    - How can carbon footprint be defined and what are the implications of carbon footprint on the environment?
+    - What does the term carbon footprint mean and what environmental consequences does it have?
+    - What is the definition of carbon footprint and what are its effects on the environment?
+
+- intent: reduce_water_usage
+  examples: |
+    - How can individuals reduce their water usage at home?
+    - What are some ways that individuals can decrease their water consumption in their households?
+    - In what ways can people conserve water in their homes and reduce their overall water usage?
+    - What measures can homeowners take to decrease their water usage and promote water conservation?
+    - I want to reduce my water usage?
+
+- intent: food_waste
+  examples: |
+    - How can individuals and households reduce food waste?
+    - What steps can individuals and households take to minimize the amount of food waste they produce?
+    - In what ways can people decrease their food waste and promote sustainable food consumption practices?
+    - What measures can be taken at the individual and household level to address the issue of food waste?
+
+- intent: single_use_plastic
+  examples: |
+    - How can individuals reduce their consumption of single-use plastics?
+    - What are some ways individuals can minimize their use of single-use plastics in their daily lives?
+    - How can people decrease their reliance on single-use plastics and adopt more sustainable consumption habits?
+    - What actions can individuals take to reduce their use of single-use plastics and promote a more sustainable way of life?
+
+- intent: sustainable_fashion
+  examples: |
+    - How can people learn more about sustainable fashion?
+    - What resources are available for people to educate themselves on sustainable fashion practices?
+    - How can individuals increase their knowledge of sustainable fashion and make informed choices when purchasing clothing?
+    - What steps can people take to educate themselves on sustainable fashion and promote more sustainable practices in the fashion industry?
+
+- intent: air_pollution
+  examples: |
+    - What are the main causes of air pollution and how can it be reduced?
+    - What are the sources of air pollution and what measures can be taken to reduce it?
+    - How does air pollution affect human health and what can be done to improve air quality?
+    - What role can individuals and governments play in reducing air pollution and promoting sustainable practices?
+
+- intent: sustainable_agriculture
+  examples: |
+    - How can people learn about sustainable agriculture practices?
+    - What resources are available for people to educate themselves on sustainable agriculture practices?
+    - How can individuals increase their knowledge of sustainable agriculture and promote sustainable farming practices in their communities?
+    - What steps can people take to educate themselves on sustainable agriculture and advocate for sustainable farming practices?
+
+- intent: start_garden
+  examples: |
+    - What are some tips for starting a garden?
+    - How can beginners start a garden and what are some important considerations to keep in mind?
+    - What are some essential steps to take when starting a garden and how can they help ensure success?
+    - How can people with limited space or resources start a garden and what are some creative solutions to consider?
+
+- intent: paper_product
+  examples: |
+    - What are some ways to reduce paper product usage?
+    - What steps can individuals take to reduce their paper product usage and what are some alternatives to consider?
+    - How can organizations and businesses reduce their paper product usage and what are the benefits of doing so?
+    - What are some creative ways to reduce paper product usage and how can they be incorporated into everyday life?
+
+- intent: sustainable_tourism
+  examples: |
+    - What are some ways to learn about sustainable tourism practices?
+    - How can i educate myself on sustainable tourism and what are some resources available to do?
+    - What are some sustainable tourism practices and how can i incorporate them into mytravels?
+    - What role do governments and organizations play in promoting sustainable tourism and how can individuals support their efforts?
+
+- intent: renewable_energy
+  examples: |
+    - How can I learn about renewable energy?
+    - What are some resources for me to educate myself on renewable energy?
+    - What are some methods to gain a deeper understanding of renewable energy?
+    - In what ways can I acquire knowledge about renewable energy?
+
+- intent: chemical_usage
+  examples: |
+    - What resources are available to educate myself on reducing chemical usage in my home?
+    - How can I learn about reducing the use of chemicals in my house?
+    - What are some methods to gain a deeper understanding of reducing chemical usage in my home?
+    - In what ways can I acquire knowledge about reducing chemical usage in my household?
+
+- intent: impact_of_plastic_pollution
+  examples: |
+    - What is the impact of plastic pollution?
+    - How does plastic pollution affect the environment?
+    - In what ways does plastic pollution harm wildlife and marine life?
+    - What are the consequences of plastic pollution on human health?
+
+- intent: green_technology
+  examples: |
+    - How can I learn about green technology?
+    - What are some ways to educate myself about green technology?
+    - In what ways can I acquire knowledge on green technology?
+    - What resources are available for me to learn about green technology?
+
+- intent: meat_consumption
+  examples: |
+    - What is the impact of meat consumption on the environment?
+    - How does meat consumption affect the environment?
+    - What are the environmental consequences of eating meat?
+    - In what ways does meat consumption harm the environment?
+
+- intent: climate_change
+  examples: |
+    - How is climate change affecting our planet?
+    - What are the impacts of climate change on the planet?
+    - How is the planet being impacted by climate change?
+    - In what ways is climate change changing our planet?
+
+- intent: ocean_conservation
+  examples: |
+    - Why is ocean conservation important?
+    - What is the significance of ocean conservation?
+    - How does ocean conservation benefit the planet?
+    - What are the reasons for prioritizing ocean conservation?
+
+- intent: wildlife_conservation
+  examples: |
+    - What are the benefits of wildlife conservation?
+    - How does wildlife conservation benefit ecosystems?
+    - What are the environmental consequences of eating meat?
+    - In what ways does wildlife conservation benefit society?
+
+- intent: deforestation
+  examples: |
+    - What are the consequences of deforestation?
+    - How does deforestation impact the environment?
+    - What are the environmental impacts of deforestation?
+    - What are the effects of deforestation on the planet?
+
+- intent: deforestation_def
+  examples: |
+    - What is deforestation?
+    - What does deforestation mean?
+    - How do you define deforestation?
+    - What is the meaning of deforestation in environmental terms?
+
+- intent: protect_water_resources
+  examples: |
+    - How can we protect our water resources?
+    - What are some strategies for preserving water resources?
+    - How can we conserve our water resources?
+    - In what ways can we safeguard our water resources?
+
+- intent: climate_action_def
+  examples: |
+    - What is climate action?
+    - How do you define climate action?
+    - What does climate action mean?
+    - In environmental terms, what is climate action?
+
+- intent: climate_action_support
+  examples: |
+    - How can we support climate action?
+    - What are some ways to promote climate action?
+    - In what ways can individuals contribute to climate action?
+    - How can businesses and organizations support climate action?
+
+- intent: ocean_hazards
+  examples: |
+    - How does pollution impact the ocean's ecosystem?
+    - What are some environmental factors that pose a threat to the ocean?
+    - In what ways do human activities contribute to oceanic damage?
+    - What can harm the ocean?
+
+- intent: energy_conservation
+  examples: |
+    - What are some effective strategies for conserving energy?
+    - In what ways can individuals reduce their energy usage?
+    - How can businesses and organizations reduce their energy consumption?
+    - How can i reduce my energy use?
+
+- intent: pesticides_and_herbicides_def
+  examples: |
+    - What are pesticides and herbicides, and how are they used in agriculture?
+    - What is the definition of pesticides and herbicides?
+    - What is the pesticides and herbicides?
+    - What is the meaning of pesticides and herbicides?
+
+- intent: pesticides_and_herbicides_impact
+  examples: |
+    - In what ways can the use of pesticides and herbicides lead to long-term environmental harm?
+    - What is the impact of pesticides and herbicides on environment?
+    - How can the pesticides and herbicides harm the environment?
+
+- intent: forest_conservation
+  examples: |
+    - What actions can harm forests?
+    - In what ways can my behavior harm forests?
+    - How can I inadvertently harm forests?
+
+- intent: reduce_impact_on_forest
+  examples: |
+    - What can I do to reduce my impact on forests?
+    - How can I minimize my impact on forests?
+    - What actions can I take to be more environmentally conscious and reduce my impact on forests?
+
+- intent: impact_on_the_atmosphere
+  examples: |
+    - What can I do to reduce my impact on the atmosphere?
+    - How can I minimize my impact on the environment and reduce my carbon footprint?
+    - What actions can I take to reduce my greenhouse gas emissions and help mitigate climate change?
+
+- intent: global_warming_def
+  examples: |
+    - What is the definition of global warming?
+    - How can we define global warming?
+    - What does global warming mean?
+    - What is global warming?
+
+- intent: global_warming_gov_role
+  examples: |
+    - What is the role of governments in reducing the impact of global warming?
+    - How can governments contribute to mitigating the effects of global warming?
+    - What actions can governments take to address global warming?
+    - What will the government do to reduce the impact of global warming?
+
+- intent: global_warming_people_role
+  examples: |
+    - What are some ways I can reduce my impact on global warming?
+    - How can individuals reduce their contribution to global warming?
+    - What actions can I take to help mitigate global warming?
+    - How can i reduce my impact on global warming?
+
+- intent: global_warming_consequences 
+  examples: |
+    - What are the consequences of global warming?
+    - What effects does global warming have on the environment?
+    - How is global warming affecting the world?
+
+- intent: paris_agreement
+  examples: |
+    - What is the Paris Agreement?
+    - What does the Paris Agreement mean?
+    - What is the definition of the Paris Agreement?
+
+- intent: carbon_offsetting
+  examples: |
+    - What is the definition of carbon offsetting?
+    - How would you define carbon offsetting?
+    - What does the term carbon offsetting mean?
+    - What is carbon offsetting?
+
+- intent: environment_help
+  examples: |
+    - What are some things I can do to help the environment?
+    - How can I contribute to protecting the environment?
+    - What actions can I take to make a positive impact on the environment?
+    - What can i do to help the environment?
+
+- intent: biodegradable_def
+  examples: |
+    - What is the definition of biodegradable?
+    - Can you explain what biodegradable means?
+    - How would you define the term "biodegradable"?
+    - What is the biodegradable?
+
+- intent: compostable_def
+  examples: |
+    - What does it mean for something to be compostable?
+    - How do you define compostable?
+    - Can you explain the term compostable?
+    - What does compostable means?
+
+- intent: difference_compostable_biodegradable
+  examples: |
+    - What is the difference between compostable and biodegradable?
+    - How are compostable and biodegradable materials different?
+    - What distinguishes compostable materials from biodegradable materials?
+    - In what ways does wildlife conservation benefit society?
+
+- intent: e_waste_def
+  examples: |
+    - What is the definition of e waste?
+    - How can we define e waste?
+    - What does e waste mean?
+    - What is e waste?
+
+- intent: consequences_e_waste
+  examples: |
+    - What are the environmental consequences of e waste?
+    - How does e waste affect the environment?
+    - What are the negative impacts of e waste?
+    - What are the consequences of e waste?
+
+- intent: impact_e_waste
+  examples: |
+    - What are some ways to reduce my impact of e waste?
+    - How can I decrease the amount of e waste I produce?
+    - What steps can I take to minimize my e waste footprint?
+    - How can i reduce my impact of e waste?
+
+- intent: recycle_e_waste
+  examples: |
+    - How can I reuse or recycle my old electronics to reduce e waste?
+    - What can I do with my old electronics instead of throwing them away?
+    - What are some sustainable ways to dispose of old electronics?
+
+- intent: endangered_species
+  examples: |
+    - What is an endangered species?
+    - How do we define an endangered species?
+    - What does it mean for a species to be endangered?
+
+- intent: endangered_species_protect
+  examples: |
+    - What are some conservation efforts to protect endangered species?
+    - How can we protect endangered species from extinction?
+    - What can individuals do to help conserve endangered species?
+    - How can we protect endangered species?
+
+- intent: climate_anxiety
+  examples: |
+    - What is climate anxiety?
+    - How do you define climate anxiety?
+    - What is the meaning of climate anxiety?
+    - Can you explain climate anxiety?
+
+- intent: climate_anxiety_reasons
+  examples: |
+    - What are the factors that contribute to climate anxiety?
+    - How does climate change impact mental health?
+    - Why are more people experiencing climate anxiety?
+
+- intent: climate_anxiety_help
+  examples: |
+    - How can individuals cope with climate anxiety?
+    - What are some strategies for managing climate anxiety?
+    - Is there help available for those experiencing climate anxiety?
+
+- intent: paper_waste_impact
+  examples: |
+    - What is the impact of paper waste on the environment?
+    - How does paper waste affect the natural world?
+    - What are the consequences of paper waste for ecosystems?
+
+- intent: paper_waste_sol
+  examples: |
+    - What are some effective ways to minimize paper waste?
+    - How can individuals contribute to reducing paper waste?
+    - How can we do to reduce our paper waste? 
+
+- intent: earthquakes_impact
+  examples: |
+    - What are the environmental effects of earthquakes?
+    - How do earthquakes impact the natural environment?
+    - What is the impact of earthquakes on the environment??
+
+- intent: ozone_hole_def
+  examples: |
+    - What is meant by the term ozone hole?
+    - What is the definition of the ozone hole phenomenon?
+    - How would you describe the concept of an ozone hole?
+    - What is the ozone hole?
+
+- intent: ozone_hole_reasons
+  examples: |
+    - What are the main reasons for the formation of the ozone hole?
+    - What are the causes of the ozone hole phenomenon?
+    - Why does the ozone hole occur?
+
+- intent: ozone_hole_impact
+  examples: |
+    - What can individuals do to reduce the impact of the ozone hole?
+    - How can we reduce the impact of the ozone hole on the environment?
+    - What actions can we take to minimize the impact of the ozone hole?
+
+- intent: amazon_rainforest
+  examples: |
+    - What is the issue with fires in the Amazon rainforest?
+    - How are fires impacting the Amazon rainforest and its ecosystems?
+    - What are the environmental consequences of fires in the Amazon rainforest?
+
+- intent: acid_rain_def
+  examples: |
+    - What is the definition of acid rain?
+    - How would you define the term acid rain?
+    - How would you define the term acid rain?
+    - What is acid rain?
+
+- intent: acid_rain_impact
+  examples: |
+    - What are the environmental effects of acid rain?
+    - How does acid rain affect the environment?
+    - What are the consequences of acid rain on the environment?
+
+- intent: acid_rain_reduce
+  examples: |
+    - What steps can be taken to reduce acid rain?
+    - How can we minimize the impact of acid rain?
+    - What measures can be implemented to prevent acid rain?
+    - How can we reduce the impact of acid rain on the environment?

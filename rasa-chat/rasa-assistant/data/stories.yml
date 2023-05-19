@@ -1,0 +1,322 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_sad
+
+- story: ask about recycling in neighborhood
+  steps:
+  - intent: recycling_in_a_neighborhood
+  - action: utter_recycling_in_a_neighborhood
+
+- story: ask about importance of recycling
+  steps:
+  - intent: importance_of_recycling
+  - action: utter_importance_of_recycling
+
+- story: ask about carbon footprint
+  steps:
+  - intent: carbon_footprint
+  - action: utter_carbon_footprint
+
+- story: ask about reduce water usage
+  steps:
+  - intent: reduce_water_usage
+  - action: utter_reduce_water_usage
+
+- story: ask about food waste
+  steps:
+  - intent: food_waste
+  - action: utter_food_waste
+
+- story: ask about single use plastic
+  steps:
+  - intent: single_use_plastic
+  - action: utter_single_use_plastic
+
+- story: ask about sustainable fashion
+  steps:
+  - intent: sustainable_fashion
+  - action: utter_sustainable_fashion
+
+- story: ask about air pollution
+  steps:
+  - intent: air_pollution
+  - action: utter_air_pollution
+
+- story: ask about sustainable agriculture
+  steps:
+  - intent: sustainable_agriculture
+  - action: utter_sustainable_agriculture
+
+- story: ask about start garden
+  steps:
+  - intent: start_garden
+  - action: utter_start_garden
+  
+- story: ask about paper product
+  steps:
+  - intent: paper_product
+  - action: utter_paper_product
+  
+- story: ask about sustainable tourism
+  steps:
+  - intent: sustainable_tourism
+  - action: utter_sustainable_tourism
+  
+- story: ask about renewable energy
+  steps:
+  - intent: renewable_energy
+  - action: utter_renewable_energy
+
+- story: ask about chemical usage
+  steps:
+  - intent: chemical_usage
+  - action: utter_chemical_usage
+  
+- story: ask about impact of plastic pollution
+  steps:
+  - intent: impact_of_plastic_pollution
+  - action: utter_impact_of_plastic_pollution
+  
+- story: ask about green technology
+  steps:
+  - intent: green_technology
+  - action: utter_green_technology
+
+- story: ask about meat consumption
+  steps:
+  - intent: meat_consumption
+  - action: utter_meat_consumption
+
+- story: ask about climate change
+  steps:
+  - intent: climate_change
+  - action: utter_climate_change
+
+- story: ask about ocean conservation
+  steps:
+  - intent: ocean_conservation
+  - action: utter_ocean_conservation
+
+- story: ask about wildlife conservation
+  steps:
+  - intent: wildlife_conservation
+  - action: utter_wildlife_conservation
+
+- story: ask about deforestation
+  steps:
+  - intent: deforestation
+  - action: utter_deforestation
+
+- story: ask about deforestation definition
+  steps:
+  - intent: deforestation_def
+  - action: utter_deforestation_def
+
+- story: ask about protecting water resources
+  steps:
+  - intent: protect_water_resources
+  - action: utter_protect_water_resources
+
+- story: ask about climate action definition
+  steps:
+  - intent: climate_action_def
+  - action: utter_climate_action_def
+
+- story: ask about climate action support
+  steps:
+  - intent: climate_action_support
+  - action: utter_climate_action_support
+
+- story: ask about the ocean hazards
+  steps:
+  - intent: ocean_hazards
+  - action: utter_ocean_hazards
+
+- story: ask about energy conservation
+  steps:
+  - intent: energy_conservation
+  - action: utter_energy_conservation
+
+- story: ask about pesticides and herbicides
+  steps:
+  - intent: pesticides_and_herbicides_def
+  - action: utter_pesticides_and_herbicides_def
+
+- story: ask about pesticides and herbicides impact
+  steps:
+  - intent: pesticides_and_herbicides_impact
+  - action: utter_pesticides_and_herbicides_impact
+
+- story: ask about forest conservation
+  steps:
+  - intent: forest_conservation
+  - action: utter_forest_conservation
+
+- story: ask about reducing impact on forests
+  steps:
+  - intent: reduce_impact_on_forest
+  - action: utter_reduce_impact_on_forest
+
+- story: ask about impact of the atmosphere
+  steps:
+  - intent: impact_on_the_atmosphere
+  - action: utter_impact_on_the_atmosphere
+
+- story: ask about global warming definition
+  steps:
+  - intent: global_warming_def
+  - action: utter_global_warming_def
+
+- story: ask about government role in global warming
+  steps:
+  - intent: global_warming_gov_role
+  - action: utter_global_warming_gov_role
+
+- story: ask about people role in global warming
+  steps:
+  - intent: global_warming_people_role
+  - action: utter_global_warming_people_role
+
+- story: ask about global warming consequences
+  steps:
+  - intent: global_warming_consequences
+  - action: utter_global_warming_consequences
+
+- story: ask about Paris agreement
+  steps:
+  - intent: paris_agreement
+  - action: utter_paris_agreement
+
+- story: ask about carbon offsetting
+  steps:
+  - intent: carbon_offsetting
+  - action: utter_carbon_offsetting
+
+- story: ask about environment helping
+  steps:
+  - intent: environment_help
+  - action: utter_environment_help
+
+- story: ask about biodegradable defintion
+  steps:
+  - intent: biodegradable_def
+  - action: utter_biodegradable_def
+
+- story: ask about compostable definition
+  steps:
+  - intent: compostable_def
+  - action: utter_compostable_def
+
+- story: ask about difference between compostable and biodegradable
+  steps:
+  - intent: difference_compostable_biodegradable
+  - action: utter_difference_compostable_biodegradable
+
+- story: ask about e waste definition
+  steps:
+  - intent: e_waste_def
+  - action: utter_e_waste_def
+
+- story: ask about consequences of e waste
+  steps:
+  - intent: consequences_e_waste
+  - action: utter_consequences_e_waste
+
+- story: ask about my impact of e waste
+  steps:
+  - intent: impact_e_waste
+  - action: utter_impact_e_waste
+
+- story: ask about recycling e waste
+  steps:
+  - intent: recycle_e_waste
+  - action: utter_recycle_e_waste
+
+- story: ask about endangered species
+  steps:
+  - intent: endangered_species
+  - action: utter_endangered_species
+
+- story: ask about endangered species protect
+  steps:
+  - intent: endangered_species_protect
+  - action: utter_endangered_species_protect
+
+- story: ask about climate anxiety
+  steps:
+  - intent: climate_anxiety
+  - action: utter_climate_anxiety
+
+- story: ask about climate anxiety reasons
+  steps:
+  - intent: climate_anxiety_reasons
+  - action: utter_climate_anxiety_reasons
+
+- story: ask about climate anxiety help
+  steps:
+  - intent: climate_anxiety_help
+  - action: utter_climate_anxiety_help
+
+- story: ask about paper waste impact
+  steps:
+  - intent: paper_waste_impact
+  - action: utter_paper_waste_impact
+
+- story: ask about paper waste solution
+  steps:
+  - intent: paper_waste_sol
+  - action: utter_paper_waste_sol
+
+- story: ask about earthquakes impact
+  steps:
+  - intent: earthquakes_impact
+  - action: utter_earthquakes_impact
+
+- story: ask about ozone hole definition
+  steps:
+  - intent: ozone_hole_def
+  - action: utter_ozone_hole_def
+
+- story: ask about ozone hole reasons
+  steps:
+  - intent: ozone_hole_reasons
+  - action: utter_ozone_hole_reasons
+
+- story: ask about ozone hole impact
+  steps:
+  - intent: ozone_hole_impact
+  - action: utter_ozone_hole_impact
+
+- story: ask about amazon rainforest
+  steps:
+  - intent: amazon_rainforest
+  - action: utter_amazon_rainforest
+
+- story: ask about acid rain definition
+  steps:
+  - intent: acid_rain_def
+  - action: utter_acid_rain_def
+
+- story: ask about acid rain impact
+  steps:
+  - intent: acid_rain_impact
+  - action: utter_acid_rain_impact
+
+- story: ask about acid rain impact reduce
+  steps:
+  - intent: acid_rain_reduce
+  - action: utter_acid_rain_reduce
