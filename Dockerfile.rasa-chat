@@ -8,9 +8,9 @@ RUN apt-get install -y python3.10-venv
 RUN python3 -m venv ./venv
 RUN . ./venv/bin/activate
 RUN pip3 install -U pip
-RUN pip3 install -y tensorflow==2.7.0 --no-cache-dir
-RUN pip3 install -y rasa
+RUN pip3 install tensorflow==2.7.0 --no-cache-dir
+RUN pip3 install rasa
 
 COPY rasa-chat/rasa-assistant /app
 
-CMD ["rasa", "run", "--model", "./rasa-assistant/models/", "--enable-api", "--cors", "\"\*\""]
+CMD ["rasa", "run", "--model", "./rasa-assistant/models/20230518-235803-relaxed-peak.tar.gz", "--enable-api", "--cors", "\"\*\""]
