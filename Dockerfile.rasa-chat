@@ -7,7 +7,7 @@ RUN apt-get install -y python3-pip
 RUN apt-get install -y python3.10-venv
 RUN python3 -m venv ./venv
 RUN . ./venv/bin/activate
-RUN pip3 install -y -U pip
+RUN pip3 install -U pip
 RUN pip3 install -y tensorflow==2.7.0 --no-cache-dir
 RUN pip3 install -y rasa
 
