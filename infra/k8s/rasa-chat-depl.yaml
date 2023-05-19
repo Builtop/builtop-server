@@ -19,14 +19,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: rasa-chat-service
-spec:
-  type: NodePort
+  name: rasa-chat-balancer
+spec: 
+  type: LoadBalancer
   selector:
     app: rasa-chat
   ports:
-    - protocol: TCP
+    - name: rasa-chat
+      protocol: TCP
       port: 5005
       targetPort: 5005
-      nodePort: 30001
-
