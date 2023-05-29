@@ -1,7 +1,7 @@
 import { Document, ObjectId } from "mongoose";
 
-import { IUser } from "../interfaces/user.interface";
-import { lookupStatus } from "../enums/lookup-status.enum";
+import { IUser } from "./users/user.interface";
+import { lookupStatus } from "../enums/lookups/lookup-status.enum";
 import { Latlng } from "./latlng";
 import { EnAr } from "./enAr";
 

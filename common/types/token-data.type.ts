@@ -1,10 +1,11 @@
 import { ObjectId } from 'mongoose';
 
-import { roles } from '../enums/roles.enum';
+import { ManagerRoles } from '../enums/managers/manager-roles.enum';
+import { UserRoles } from '../enums/users/user-roles.enum';
 
 export type tokenData = {
     _id: ObjectId | string,
     phoneNum: string,
-    role: roles | 'no-role',
+    role: ManagerRoles | UserRoles,
     privileges: string[]
 }

@@ -1,10 +1,10 @@
 import { ObjectId } from "mongoose";
-import { lookupStatus } from "../enums/lookup-status.enum";
+import { lookupStatus } from "../enums/lookups/lookup-status.enum";
 import { ICountry } from "./country.interface";
 import { CreatedUser } from "./created-user.interface";
 import { EnAr } from "./enAr";
 import { Latlng } from "./latlng";
-import { IUser } from "./user.interface";
+import { IUser } from "./users/user.interface";
 
 export interface CityData {
     name: EnAr,

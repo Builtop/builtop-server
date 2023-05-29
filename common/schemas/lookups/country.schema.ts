@@ -1,11 +1,11 @@
 import { Schema } from "mongoose";
 
-import { infoType } from "../enums/info-type.enum";
-import { userStatus } from "../enums/user-status.enum";
-import { UserSchema } from "./user.schema";
-import { Latlng } from "../interfaces/latlng";
-import { CreatedUser } from "../interfaces/created-user.interface";
-import { EnAr } from "../interfaces/enAr";
+import { infoType } from "../../enums/users/info-type.enum";
+import { userStatus } from "../../enums/users/user-status.enum";
+import { UserSchema } from "../users/user.schema";
+import { Latlng } from "../../interfaces/latlng";
+import { CreatedUser } from "../../interfaces/created-user.interface";
+import { EnAr } from "../../interfaces/enAr";
 
 export const CountrySchema = [
   {

@@ -1,7 +1,7 @@
 import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
-import { AuthRequest } from '../interfaces/auth-request.interface';
+import { AuthRequest } from '../interfaces/operations/auth-request.interface';
 import { tokenData } from '../types/token-data.type';
 import { AuthError } from '../errors/auth.error';
 

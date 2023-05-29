@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 
-import { infoType } from '../enums/info-type.enum';
-import { userStatus } from '../enums/user-status.enum';
+import { InfoType } from '../../enums/users/info-type.enum';
+import { UserStatus } from '../../enums/users/user-status.enum';
 
 export const UserSchema = [
     {
@@ -17,21 +17,29 @@ export const UserSchema = [
             type: String,
             required: true
         },
-        privileges: [
-            { type: String }
-        ],
         infoColl: {
             type: String,
-            enum: infoType
+            enum: InfoType
         },
         info: {
             type: Schema.Types.ObjectId,
             refPath: 'infoColl',
         },
+        privileges: [
+            { type: String }
+        ],
+        isPhoneNumValid: {
+            type: Boolean,
+            required: true
+        },
+        isEmailValid: {
+            type: Boolean,
+            required: true
+        },
         status: {
             type: String,
             required: true,
-            enum: userStatus
+            enum: UserStatus
         }
     },
     {
