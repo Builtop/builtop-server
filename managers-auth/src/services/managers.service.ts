@@ -11,22 +11,22 @@ export class ManagerService {
     }
 
     static async findAll<T>(query: FilterQuery<T>, skip: number | undefined = 0, limit: number | undefined = 15) {
-        return await this.Model.find<T>(query).populate('info').skip(skip).limit(limit);
+        return await this.Model.find<T>(query).skip(skip).limit(limit);
     }
 
     static async findOne<T>(query: FilterQuery<T>) {
-        return await this.Model.findOne<T>(query).populate('info');
+        return await this.Model.findOne<T>(query);
     }
 
     static async findById<T>(_id: string | ObjectId) {
-        return await this.Model.findById<T>(_id).populate('info');
+        return await this.Model.findById<T>(_id);
     }
 
     static async findByEmail<T>(email: string) {
-        return await this.Model.findOne<T>({ email }).populate('info');
+        return await this.Model.findOne<T>({ email });
     }
 
     static async findByPhoneNum<T>(phoneNum: string) {
-        return await this.Model.findOne<T>({ phoneNum }).populate('info');
+        return await this.Model.findOne<T>({ phoneNum });
     }
 }
