@@ -12,7 +12,7 @@ const start = async () => {
 
         const defaultPort = 4001
         app.listen(process.env.PORT || defaultPort, () => {
-            console.log(`Service ( Users Auth) is running on port ${PORT || defaultPort}`);
+            console.log(`Service ( Managers Auth) is running on port ${PORT || defaultPort}`);
         });
     } catch (err) {
         console.error(err);
