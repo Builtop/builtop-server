@@ -83,9 +83,9 @@ export const forgetPassword = async (req: Request<{}, {}, forgetPasswordInput>, 
         let manager = null;
         
         if (method === forgetPasswordMethods.WithPhoneNumber && phoneNum) {
-            manager = await ManagerService.findByPhoneNum(phoneNum);
+            manager = await ManagerService.findByPhoneNum<IManager>(phoneNum);
         } else if (method === forgetPasswordMethods.WithEmail && email) {
-            manager = await ManagerService.findByEmail(email);
+            manager = await ManagerService.findByEmail<IManager>(email);
         }
 
         if (!manager) {
@@ -104,7 +104,7 @@ export const validatePhoneOTP = async (req: Request<{}, {}, validatePhoneOTPInpu
     try {
         const { phoneNum, OTP } = req.body;
 
-        const manager = await ManagerService.findByPhoneNum(phoneNum);
+        const manager = await ManagerService.findByPhoneNum<IManager>(phoneNum);
         if (!manager) {
             throw new AuthError('invalid credentials');
         }
@@ -125,7 +125,7 @@ export const validateEmailOTP = async (req: Request<{}, {}, validateEmailOTPInpu
     try {
         const { email, OTP } = req.body;
 
-        const manager = await ManagerService.findByEmail(email);
+        const manager = await ManagerService.findByEmail<IManager>(email);
         if (!manager) {
             throw new AuthError('invalid credentials');
         }
