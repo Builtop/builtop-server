@@ -8,7 +8,7 @@ import { resetPasswordInput } from '../validation-schemas/reset-password-schema.
 
 import { ManagerService } from '../services/managers.service';
 
-import { AuthError, IManager, JWT, Manager, ManagerRoles, ManagerStatus, PasswordManager, ProcessResult, tokenData } from '../../../common/index';
+import { AuthError, IManager, JWT, Manager, ManagerRoles, ManagerStatus, PasswordManager, ProcessResult, forgetPasswordMethods, tokenData } from '../../../common/index';
 
 // dull endpoint
 export const createAdmin = async (req: Request, res: Response, next: NextFunction) => {
@@ -79,6 +79,22 @@ export const login = async (req: Request<{}, {}, loginInput>, res: Response, nex
 
 export const forgetPassword = async (req: Request<{}, {}, forgetPasswordInput>, res: Response, next: NextFunction) => {
     try {
+        const { method, phoneNum, email } = req.body;
+        let manager = null;
+        
+        if (method === forgetPasswordMethods.WithPhoneNumber && phoneNum) {
+            manager = await ManagerService.findByPhoneNum(phoneNum);
+        } else if (method === forgetPasswordMethods.WithEmail && email) {
+            manager = await ManagerService.findByEmail(email);
+        }
+
+        if (!manager) {
+            throw new AuthError('invalid credentials');
+        }
+
+        res.status(200).json(<ProcessResult<any>> {
+            success: true
+        })
     } catch (err) {
         next(err);
     }
