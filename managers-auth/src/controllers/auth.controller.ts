@@ -102,6 +102,20 @@ export const forgetPassword = async (req: Request<{}, {}, forgetPasswordInput>, 
 
 export const validatePhoneOTP = async (req: Request<{}, {}, validatePhoneOTPInput>, res: Response, next: NextFunction) => {
     try {
+        const { phoneNum, OTP } = req.body;
+
+        const manager = await ManagerService.findByPhoneNum(phoneNum);
+        if (!manager) {
+            throw new AuthError('invalid credentials');
+        }
+
+        if (OTP !== '100100') {
+            throw new AuthError('invalid OTP');
+        }
+
+        res.status(201).json(<ProcessResult<any>> {
+            success: true
+        })
     } catch (err) {
         next(err);
     }
@@ -109,6 +123,20 @@ export const validatePhoneOTP = async (req: Request<{}, {}, validatePhoneOTPInpu
 
 export const validateEmailOTP = async (req: Request<{}, {}, validateEmailOTPInput>, res: Response, next: NextFunction) => {
     try {
+        const { email, OTP } = req.body;
+
+        const manager = await ManagerService.findByEmail(email);
+        if (!manager) {
+            throw new AuthError('invalid credentials');
+        }
+
+        if (OTP !== '100100') {
+            throw new AuthError('invalid OTP');
+        }
+
+        res.status(201).json(<ProcessResult<any>> {
+            success: true
+        })
     } catch (err) {
         next(err);
     }
