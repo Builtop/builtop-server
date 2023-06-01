@@ -144,6 +144,25 @@ export const validateEmailOTP = async (req: Request<{}, {}, validateEmailOTPInpu
 
 export const resetPassword = async (req: Request<{}, {}, resetPasswordInput>, res: Response, next: NextFunction) => {
     try {
+        const { method, phoneNum, email, newPassword } = req.body;
+
+        let manager = null;
+        if (method === forgetPasswordMethods.WithPhoneNumber && phoneNum) {
+            manager = await ManagerService.findByPhoneNum<IManager>(phoneNum);
+        } else if (method === forgetPasswordMethods.WithEmail && email) {
+            manager = await ManagerService.findByEmail<IManager>(email);
+        }
+
+        if (!manager) {
+            throw new AuthError('invalid credentials');
+        }
+
+        manager.password = newPassword;
+        manager.save();
+
+        res.status(200).json(<ProcessResult<any>> {
+            success: true
+        })
     } catch (err) {
         next(err);
     }
