@@ -8,40 +8,7 @@ import { resetPasswordInput } from '../validation-schemas/reset-password-schema.
 
 import { ManagerService } from '../services/managers.service';
 
-import { AuthError, IManager, JWT, Manager, ManagerRoles, ManagerStatus, PasswordManager, ProcessResult, forgetPasswordMethods, tokenData } from '../../../common/index';
-
-// dull endpoint
-export const createAdmin = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-        const admin = await ManagerService.create<Manager>({
-            email: 'admin@gmail.com',
-            phoneNum: '+999888777',
-            password: '12345678',
-            name: 'admin',
-            image: 'image',
-            role: ManagerRoles.Admin,
-            privileges: [],
-            isPhoneNumValid: true,
-            isEmailValid: true,
-            status: ManagerStatus.Active,
-        });
-
-        const token = JWT.sign({
-            _id: admin._id,
-            phoneNum: admin.phoneNum,
-            privileges: admin.privileges,
-            role: admin.role,
-        });
-
-        res.status(201).json(<ProcessResult<IManager>>{
-            success: true,
-            data: admin,
-            token: token,
-        });
-    } catch (error) {
-        next(error);
-    }
-};
+import { AuthError, IManager, JWT, ManagerStatus, PasswordManager, ProcessResult, forgetPasswordMethods, tokenData } from '../../../common/index';
 
 export const login = async (req: Request<{}, {}, loginInput>, res: Response, next: NextFunction) => {
     try {

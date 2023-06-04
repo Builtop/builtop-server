@@ -13,9 +13,6 @@ import { resetPasswordSchema } from './validation-schemas/reset-password-schema.
 
 const router = express.Router();
 
-// dull endpoint
-router.post('/create-admin', json(), authController.createAdmin);
-
 router.post('/login', json(), validateSchema(loginSchema), authController.login);
 
 router.post('/forget-password', json(), validateSchema(forgetPasswordSchema), authController.forgetPassword);
