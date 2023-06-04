@@ -5,8 +5,9 @@ import { UserRoles } from '../../enums/users/user-roles.enum';
 export const EngineerInfoSchema = [
     {
         role: {
-            type: UserRoles.Engineer,
-            required: true
+            type: String,
+            required: true,
+            enum: UserRoles
         },
         name: {
             type: String,

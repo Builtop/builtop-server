@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-import { InfoType } from '../../enums/users/info-type.enum';
+import { InfoTypes } from '../../enums/users/info-types.enum';
 import { UserStatus } from '../../enums/users/user-status.enum';
 
 export const UserSchema = [
@@ -19,7 +19,7 @@ export const UserSchema = [
         },
         infoColl: {
             type: String,
-            enum: InfoType
+            enum: InfoTypes
         },
         info: {
             type: Schema.Types.ObjectId,

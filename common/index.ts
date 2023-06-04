@@ -9,7 +9,7 @@ export * from './enums/managers/manager-status.enum';
 
 // users
 export * from './enums/users/user-roles.enum';
-export * from './enums/users/info-type.enum';
+export * from './enums/users/info-types.enum';
 export * from './enums/users/user-status.enum';
 
 // lookups

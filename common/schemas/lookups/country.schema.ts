@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-import { infoType } from "../../enums/users/info-type.enum";
+import { infoType } from "../../enums/users/info-types.enum";
 import { userStatus } from "../../enums/users/user-status.enum";
 import { UserSchema } from "../users/user.schema";
 import { Latlng } from "../../interfaces/latlng";

@@ -1,4 +1,4 @@
-import { Document, Schema } from 'mongoose';
+import { Document } from 'mongoose';
 
 import { UserRoles } from '../../enums/users/user-roles.enum';
 
@@ -11,7 +11,7 @@ export interface EngineerInfo {
     major: string,
     National_ID: string,
     National_ID_Document: string,
-    National_ID_Expiration_Date: Schema.Types.Date,
+    National_ID_Expiration_Date: Date,
     Engineering_Cert_Document: string,
     SCE_Cert_Document: string,
     Resume_Document: string

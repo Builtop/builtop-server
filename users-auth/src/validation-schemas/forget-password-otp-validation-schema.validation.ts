@@ -2,7 +2,7 @@ import * as yup from 'yup';
 
 import { forgetPasswordMethods } from '../../../common/index';
 
-export const resetPasswordSchema = yup.object().shape({
+export const forgetPasswordOTPValidationSchema = yup.object().shape({
     method: yup.string().oneOf(Object.values(forgetPasswordMethods)).required(),
     phoneNum: yup.string().when('method', values => {
         if(values[0] === forgetPasswordMethods.WithPhoneNumber) {
@@ -18,7 +18,7 @@ export const resetPasswordSchema = yup.object().shape({
             return yup.string().notRequired();
         }
     }),
-    newPassword: yup.string().min(8).max(20).required().ensure(),
+    OTP: yup.string().length(6).required().ensure(),
 });
 
-export type resetPasswordInput = yup.InferType<typeof resetPasswordSchema>;
+export type forgetPasswordOTPValidationInput = yup.InferType<typeof forgetPasswordOTPValidationSchema>;
